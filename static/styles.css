@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+#skills {
+    margin: 2em;
+}
+
+.skill-category {
+    margin-bottom: 1em;
+}
+
+.skill-category h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.skill-category ul {
+    list-style-type: disc;
+    margin-left: 2em;
+}
