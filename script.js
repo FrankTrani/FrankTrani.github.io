@@ -2,12 +2,19 @@
 function toggleTheme() {
     const body = document.body;
     const currentTheme = body.getAttribute("data-theme");
+    const themeIcon = document.getElementById("themeIcon");
 
+    let newTheme = "light";
     if (currentTheme === "dark") {
-        body.setAttribute("data-theme", "light");
+        newTheme = "light";
+        themeIcon.textContent = "🌙"; // Moon for dark mode
     } else {
-        body.setAttribute("data-theme", "dark");
+        newTheme = "dark";
+        themeIcon.textContent = "☀️"; // Sun for light mode
     }
+
+    body.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme); // Save the current theme to localStorage
 }
 
 // Function to calculate age and years of programming
@@ -27,8 +34,10 @@ function calculateInfo() {
 // Run the function when the page loads
 window.onload = function() {
     calculateInfo();
-    // Set default theme to light
-    document.body.setAttribute("data-theme", "light");
+
+    // Retrieve saved theme from localStorage or set to dark as default
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.body.setAttribute("data-theme", savedTheme);
 
     // Add event listener to the theme toggle button
     document.getElementById("themeToggle").addEventListener("click", toggleTheme);
