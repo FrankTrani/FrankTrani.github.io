@@ -1,3 +1,18 @@
+// Function to toggle between light and dark mode
+function toggleTheme() {
+    const body = document.body;
+    const currentTheme = body.getAttribute("data-theme");
+
+    if (currentTheme === "dark") {
+        body.setAttribute("data-theme", "light");
+    } else {
+        body.setAttribute("data-theme", "dark");
+    }
+}
+
+// Add event listener to the theme toggle button
+document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+
 // Function to calculate age and years of programming
 function calculateInfo() {
     const birthYear = 2006; // Replace with your birth year
@@ -13,4 +28,8 @@ function calculateInfo() {
 }
 
 // Run the function when the page loads
-window.onload = calculateInfo;
+window.onload = function() {
+    calculateInfo();
+    // Set default theme to light
+    document.body.setAttribute("data-theme", "light");
+};
