@@ -5,8 +5,8 @@ body:not([data-theme]) {
     color: black;
 }
 
-header[data-theme="light"],
-header:not([data-theme]) {
+body[data-theme="light"] header,
+body:not([data-theme]) header {
     background-color: white;
     color: black;
 }
@@ -17,9 +17,15 @@ body[data-theme="dark"] {
     color: white;
 }
 
-header[data-theme="dark"] {
+body[data-theme="dark"] header {
     background-color: black;
     color: white;
+}
+
+/* Common styles */
+body,
+header {
+    text-align: center;  /* Ensure text is centered */
 }
 
 #skills {
@@ -36,12 +42,22 @@ header[data-theme="dark"] {
     margin-bottom: 1em;
 }
 
-.skill-box {
+body[data-theme="dark"] .skill-box {
     display: inline-block;
     margin: 0.5em;
     padding: 0.5em 1em;
-    border: 1px solid green;
+    border: 1px solid rgb(0, 175, 0);
     border-radius: 5px;
+    background-color: rgb(0, 175, 0);
+}
+
+body[data-theme="light"] .skill-box {
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    border: 1px solid rgb(0, 255, 0);
+    border-radius: 5px;
+    background-color: rgb(0, 255, 0);
 }
 
 .contact-button {

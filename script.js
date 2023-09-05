@@ -10,9 +10,6 @@ function toggleTheme() {
     }
 }
 
-// Add event listener to the theme toggle button
-document.getElementById("themeToggle").addEventListener("click", toggleTheme);
-
 // Function to calculate age and years of programming
 function calculateInfo() {
     const birthYear = 2006; // Replace with your birth year
@@ -32,4 +29,7 @@ window.onload = function() {
     calculateInfo();
     // Set default theme to light
     document.body.setAttribute("data-theme", "light");
+
+    // Add event listener to the theme toggle button
+    document.getElementById("themeToggle").addEventListener("click", toggleTheme);
 };
