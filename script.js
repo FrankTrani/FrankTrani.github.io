@@ -42,3 +42,9 @@ window.onload = function() {
     // Add event listener to the theme toggle button
     document.getElementById("themeToggle").addEventListener("click", toggleTheme);
 };
+
+
+
+// Run the function when the page loads and on scroll
+window.addEventListener("load", setActiveNavButton);
+window.addEventListener("scroll", setActiveNavButton);

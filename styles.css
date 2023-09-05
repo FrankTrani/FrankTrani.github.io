@@ -79,28 +79,35 @@ body[data-theme="light"] .skill-box {
 #top-nav {
     position: fixed;
     top: 0;
-    right: 0;
+    right: 30px;  /* Move it a bit to the left */
     background-color: inherit;
     padding: 10px;
     z-index: 1;
+    border: 2px solid #ccc;  /* Encase it in a box */
+    border-radius: 40px;  /* Rounded corners */
+}
+
+.nav-button {
+    float: right;
+    margin-left: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition: all 0.3s ease;  /* Dynamic movement */
+}
+
+.nav-button:hover,
+.nav-button.active {  /* Highlight the current page */
+    border-color: #ccc;
+    background-color: #f2f2f2;
+    transform: scale(1.1);  /* Dynamic movement */
+    border-radius: 40px;  /* Rounded corners */
 }
 
 #themeToggle {
     float: right;
     margin-left: 10px;
-}
-
-.nav-button {
-    float: right;
-    margin-left: 10px;
-    padding: 5px 10px;
-    text-decoration: none;
-    border: 1px solid transparent;
-    border-radius: 3px;
-}
-
-.nav-button:hover {
-    border-color: #ccc;
 }
 
 #themeToggle {
@@ -121,4 +128,75 @@ body[data-theme="light"] .skill-box {
 
 #themeIcon {
     font-size: 1.5em;
+}
+
+#projects {
+    margin: 2em;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+#project-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#project-list li {
+    margin: 1em;
+    font-size: 1.2em;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#project-list a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: inherit;
+}
+
+#project-list li:hover {
+    transform: scale(1.05);
+    background-color: #e6e6e6;
+}
+
+.nav-button.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #0056b3;
+}
+
+#links {
+    margin: 2em;
+    text-align: center;
+}
+
+.link-preview {
+    display: inline-block;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.link-preview a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-preview img {
+    width: 50px;
+    height: 50px;
+}
+
+.link-preview:hover {
+    transform: scale(1.05);
+    background-color: #e6e6e6;
 }
