@@ -1,4 +1,10 @@
 import psycopg2
+from flask import Flask, render_template
+
+
+@app.route('/')
+def index():
+
 
 connection = None  
 total = 0  # Initialize the total
