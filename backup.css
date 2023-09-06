@@ -1,0 +1,256 @@
+
+#skills {
+    margin: 2em;
+    text-align: center;
+}
+
+.skill-category {
+    margin-bottom: 2em;
+}
+
+.skill-category h3 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+body[data-theme="dark"] .skill-box {
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    border: 1px solid rgb(0, 175, 0);
+    border-radius: 5px;
+    background-color: rgb(0, 175, 0);
+}
+
+body[data-theme="light"] .skill-box {
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    border: 1px solid rgb(0, 255, 0);
+    border-radius: 5px;
+    background-color: rgb(0, 255, 0);
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+}
+
+
+#projects {
+    margin: 2em;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+#project-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+body[data-theme="dark"] #project-list li {
+    margin: 1em;
+    font-size: 1.2em;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="light"] #project-list li {
+    margin: 1em;
+    font-size: 1.2em;
+    background-color: black;
+    border: 1px solid rgb(29, 29, 29);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+
+body[data-theme="dark"] #project-list a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+body[data-theme="light"] #project-list a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+#project-list li:hover {
+    transform: scale(1.05);
+    background-color: #e6e6e6;
+}
+
+.nav-button.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #0056b3;
+}
+
+#links {
+    margin: 2em;
+    text-align: center;
+}
+
+.link-preview {
+    display: inline-block;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.link-preview a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-preview img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.link-preview:hover {
+    transform: scale(1.05);
+    background-color: #e6e6e6;
+}
+
+#links {
+    margin: 2em;
+    text-align: center;  /* This will center .link-preview boxes */
+}
+
+/* Default light mode styles */
+body[data-theme="light"],
+body:not([data-theme]) {
+    background-color: white;
+    color: black;
+    transition: all 1s ease;  /* Slower transition for gradient */
+}
+
+body[data-theme="light"] header,
+body:not([data-theme]) header {
+    background-color: white;
+    color: black;
+    transition: all 1s ease;  /* Slower transition for gradient */
+}
+
+/* Dark mode styles */
+body[data-theme="dark"] {
+    background-color: black;
+    color: white;
+    transition: all 1s ease;  /* Slower transition for gradient */
+}
+
+body[data-theme="dark"] header {
+    background-color: black;
+    color: white;
+    transition: all 1s ease;  /* Slower transition for gradient */
+}
+
+/* Common styles */
+body,
+header {
+    text-align: center;  /* Ensure text is centered */
+    transition: all 1s ease;  /* Slower transition for gradient */
+}
+
+/* ... (Your existing styles for skills, contact-button, etc.) ... */
+
+/* Navigation Bar */
+#top-nav {
+    position: fixed;
+    top: 0;
+    right: 30px;
+    background-color: inherit;
+    padding: 10px;
+    z-index: 1;
+    border: 2px solid #ccc;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Center text vertically */
+}
+
+.nav-button {
+    margin: 0 5px;  /* Space the text out a bit */
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 24px;  /* Same size as sun/moon icon */
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Nav button styles for light theme */
+body[data-theme="light"] .nav-button {
+    color: blue;
+}
+
+/* Nav button styles for dark theme */
+body[data-theme="dark"] .nav-button {
+    color: lightblue;
+}
+
+.nav-button:hover,
+.nav-button.active {
+    border-color: #ccc;
+    background-color: #f2f2f2;
+    transform: scale(1.1);
+    border-radius: 40px;
+}
+
+/* Theme Toggle */
+#themeToggle {
+    float: right;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#themeIcon {
+    font-size: 24px;
+}
+
+#themeToggle.spin {
+    animation: spin 1s ease-in-out;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ... (Your existing styles for projects, links, etc.) ... */

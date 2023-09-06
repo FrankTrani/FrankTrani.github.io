@@ -3,6 +3,7 @@ function toggleTheme() {
     const body = document.body;
     const currentTheme = body.getAttribute("data-theme");
     const themeIcon = document.getElementById("themeIcon");
+    const themeToggle = document.getElementById("themeToggle"); // Assuming your button has this id
 
     let newTheme = "light";
     if (currentTheme === "dark") {
@@ -13,11 +14,18 @@ function toggleTheme() {
         themeIcon.textContent = "☀️"; // Sun for light mode
     }
 
+    // Add the spin class to make the button rotate
+    themeToggle.classList.add("spin");
+
+    // Remove the spin class after 1 second (the duration of the spin animation)
+    setTimeout(() => {
+        themeToggle.classList.remove("spin");
+    }, 1000);
+
     body.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme); // Save the current theme to localStorage
 }
 
-// Function to calculate age and years of programming
 function calculateInfo() {
     const birthYear = 2006; // Replace with your birth year
     const startYear = 2018; // Replace with the year you started programming
@@ -27,12 +35,17 @@ function calculateInfo() {
     const yearsProgramming = currentYear - startYear;
 
     // Update the HTML content
-    document.getElementById("age").innerText = age;
-    document.getElementById("yearsProgramming").innerText = yearsProgramming;
+    if (document.getElementById("age")) {
+        document.getElementById("age").innerText = age;
+    }
+    if (document.getElementById("yearsProgramming")) {
+        document.getElementById("yearsProgramming").innerText = yearsProgramming;
+    }
 }
 
 // Run the function when the page loads
 window.onload = function() {
+    // Calculate info if elements are present
     calculateInfo();
 
     // Retrieve saved theme from localStorage or set to dark as default
@@ -40,11 +53,13 @@ window.onload = function() {
     document.body.setAttribute("data-theme", savedTheme);
 
     // Add event listener to the theme toggle button
-    document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+    if (document.getElementById("themeToggle")) {
+        document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+    }
+
+    // Check if setActiveNavButton is defined before adding event listeners
+    if (typeof setActiveNavButton === "function") {
+        window.addEventListener("load", setActiveNavButton);
+        window.addEventListener("scroll", setActiveNavButton);
+    }
 };
-
-
-
-// Run the function when the page loads and on scroll
-window.addEventListener("load", setActiveNavButton);
-window.addEventListener("scroll", setActiveNavButton);
