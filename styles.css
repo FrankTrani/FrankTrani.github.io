@@ -1,56 +1,36 @@
-/* Common Styles */
-body, header {
-    text-align: center;
-    transition: all 1s ease;
-}
 
-/* Light Mode Styles */
-body[data-theme="light"], body:not([data-theme]),
-header[data-theme="light"], header:not([data-theme]) {
-    background-color: white;
-    color: black;
-}
-
-/* Dark Mode Styles */
-body[data-theme="dark"], header[data-theme="dark"] {
-    background-color: black;
-    color: white;
-}
-
-/* Skills Section */
-#skills, #projects, #links {
+#skills {
     margin: 2em;
+    text-align: center;
 }
 
 .skill-category {
     margin-bottom: 2em;
 }
 
-.skill-category h3, #projects h2 {
+.skill-category h3 {
     font-size: 1.2em;
     margin-bottom: 1em;
 }
 
-/* Skill Box */
-.skill-box {
+body[data-theme="dark"] .skill-box {
     display: inline-block;
     margin: 0.5em;
     padding: 0.5em 1em;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-body[data-theme="dark"] .skill-box {
     border: 1px solid rgb(0, 175, 0);
+    border-radius: 5px;
     background-color: rgb(0, 175, 0);
 }
 
 body[data-theme="light"] .skill-box {
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em 1em;
     border: 1px solid rgb(0, 255, 0);
+    border-radius: 5px;
     background-color: rgb(0, 255, 0);
 }
 
-/* Contact Button */
 .contact-button {
     display: inline-block;
     background-color: #007bff;
@@ -66,28 +46,52 @@ body[data-theme="light"] .skill-box {
     background-color: #0056b3;
 }
 
-/* Projects Section */
+
+#projects {
+    margin: 2em;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
 #project-list {
     list-style-type: none;
     padding: 0;
 }
 
-#project-list li {
+body[data-theme="dark"] #project-list li {
     margin: 1em;
     font-size: 1.2em;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
-body[data-theme="dark"] #project-list li {
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
+body[data-theme="light"] #project-list li {
+    margin: 1em;
+    font-size: 1.2em;
+    background-color: black;
+    border: 1px solid rgb(29, 29, 29);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+
+body[data-theme="dark"] #project-list a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
     color: black;
 }
 
-body[data-theme="light"] #project-list li {
-    background-color: black;
-    border: 1px solid rgb(29, 29, 29);
+body[data-theme="light"] #project-list a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
     color: white;
 }
 
@@ -95,6 +99,85 @@ body[data-theme="light"] #project-list li {
     transform: scale(1.05);
     background-color: #e6e6e6;
 }
+
+.nav-button.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #0056b3;
+}
+
+#links {
+    margin: 2em;
+    text-align: center;
+}
+
+.link-preview {
+    display: inline-block;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.link-preview a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-preview img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.link-preview:hover {
+    transform: scale(1.05);
+    background-color: #e6e6e6;
+}
+
+#links {
+    margin: 2em;
+    text-align: center;  /* This will center .link-preview boxes */
+}
+
+/* Default light mode styles */
+body[data-theme="light"],
+body:not([data-theme]) {
+    background-color: white;
+    color: black;
+    transition: all 1s ease;  /* Slower transition for gradient */
+}
+
+body[data-theme="light"] header,
+body:not([data-theme]) header {
+    background-color: white;
+    color: black;
+    transition: all 1s ease;  /* Slower transition for gradient */
+}
+
+/* Dark mode styles */
+body[data-theme="dark"] {
+    background-color: black;
+    color: white;
+    transition: all 1s ease;  /* Slower transition for gradient */
+}
+
+body[data-theme="dark"] header {
+    background-color: black;
+    color: white;
+    transition: all 1s ease;  /* Slower transition for gradient */
+}
+
+/* Common styles */
+body,
+header {
+    text-align: center;  /* Ensure text is centered */
+    transition: all 1s ease;  /* Slower transition for gradient */
+}
+
+/* ... (Your existing styles for skills, contact-button, etc.) ... */
 
 /* Navigation Bar */
 #top-nav {
@@ -108,28 +191,31 @@ body[data-theme="light"] #project-list li {
     border-radius: 40px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;  /* Center text vertically */
 }
 
 .nav-button {
-    margin: 0 5px;
+    margin: 0 5px;  /* Space the text out a bit */
     padding: 5px 10px;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 24px;  /* Same size as sun/moon icon */
     border: 1px solid transparent;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
+/* Nav button styles for light theme */
 body[data-theme="light"] .nav-button {
     color: blue;
 }
 
+/* Nav button styles for dark theme */
 body[data-theme="dark"] .nav-button {
     color: lightblue;
 }
 
-.nav-button:hover, .nav-button.active {
+.nav-button:hover,
+.nav-button.active {
     border-color: #ccc;
     background-color: #f2f2f2;
     transform: scale(1.1);
@@ -166,3 +252,5 @@ body[data-theme="dark"] .nav-button {
         transform: rotate(360deg);
     }
 }
+
+/* ... (Your existing styles for projects, links, etc.) ... */
