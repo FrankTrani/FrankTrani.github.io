@@ -5,7 +5,7 @@ function toggleTheme() {
     const themeIcon = document.getElementById("themeIcon");
     const themeToggle = document.getElementById("themeToggle"); // Assuming your button has this id
 
-    let newTheme = "light";
+    let newTheme = "dark";
     if (currentTheme === "dark") {
         newTheme = "light";
         themeIcon.textContent = "🌙"; // Moon for dark mode

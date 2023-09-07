@@ -147,39 +147,35 @@ body[data-theme="light"],
 body:not([data-theme]) {
     background-color: white;
     color: black;
-    transition: all 1s ease;  /* Slower transition for gradient */
 }
 
 body[data-theme="light"] header,
 body:not([data-theme]) header {
     background-color: white;
     color: black;
-    transition: all 1s ease;  /* Slower transition for gradient */
 }
 
 /* Dark mode styles */
 body[data-theme="dark"] {
     background-color: black;
     color: white;
-    transition: all 1s ease;  /* Slower transition for gradient */
 }
 
 body[data-theme="dark"] header {
     background-color: black;
     color: white;
-    transition: all 1s ease;  /* Slower transition for gradient */
 }
 
 /* Common styles */
 body,
 header {
     text-align: center;  /* Ensure text is centered */
-    transition: all 1s ease;  /* Slower transition for gradient */
 }
 
-/* ... (Your existing styles for skills, contact-button, etc.) ... */
 
 /* Navigation Bar */
+
+
 #top-nav {
     position: fixed;
     top: 0;
@@ -221,11 +217,25 @@ body[data-theme="dark"] .nav-button {
     transform: scale(1.1);
     border-radius: 40px;
 }
+ 
+#swap {
+    position: fixed;
+    top: 0;
+    right: 350px;
+    background-color: inherit;
+    padding: 5px;
+    z-index: 1;
+    border: 2px solid #ccc;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Center text vertically */
+}
 
 /* Theme Toggle */
 #themeToggle {
     float: right;
-    margin-left: 10px;
+    margin-left: 50px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -253,4 +263,7 @@ body[data-theme="dark"] .nav-button {
     }
 }
 
-/* ... (Your existing styles for projects, links, etc.) ... */
+#Name {
+    margin: 8em;
+    text-align: center;
+}
