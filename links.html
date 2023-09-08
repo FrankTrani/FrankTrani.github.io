@@ -6,12 +6,25 @@
     <script src="script.js"></script>
 </head>
 <body id>
-    <nav id="top-nav">
-        <button id="themeToggle"><span id="themeIcon">☀️</span></button>
-        <a href="index.html" class="nav-button">Home</a>
-        <a href="projects.html" class="nav-button">Projects</a>
-        <a href="links.html" class="nav-button active">Links</a>
-    </nav>
+    <header>
+        <nav id = "swap">
+            <label class="switch-button" for="switch" onclick="toggleTheme()">
+                <div class="switch-outer">
+                  <input id="themeToggle" type="checkbox">
+                  <div class="button">
+                    <span class="button-toggle" id = "themeIcon">☀️</span>
+                    <span class="button-indicator"></span>
+                  </div>
+                </div>
+              </label>
+        </nav>
+            
+            <nav id="top-nav">
+                <a href="index.html" class="nav-button active">Home</a>
+                <a href="projects.html" class="nav-button ">Projects</a>
+                <a href="links.html" class="nav-button">Links</a>
+            </nav>
+        </header>
 
     <header>
         <h1>Links</h1>
