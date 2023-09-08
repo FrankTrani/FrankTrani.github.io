@@ -26,9 +26,9 @@ body[data-theme="light"] .skill-box {
     display: inline-block;
     margin: 0.5em;
     padding: 0.5em 1em;
-    border: 1px solid rgb(0, 255, 0);
+    border: 1px solid rgb(0, 172, 0);
     border-radius: 5px;
-    background-color: rgb(0, 255, 0);
+    background-color: rgb(0, 172, 0);
 }
 
 
@@ -420,13 +420,18 @@ body[data-theme="dark"] .nav-button {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: black;
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 50%; 
 }
 
+#modal-content,
+#modal-content h1,
+#modal-content h2 {
+color: white;
+}
 .close {
     color: #aaa;
     float: right;
@@ -442,8 +447,15 @@ body[data-theme="dark"] .nav-button {
     cursor: pointer;
 }
 
+
 #contactBtn {
-    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;    
+    margin: 2em auto 0 auto;    
+    text-align: right;     
     background-color: #007bff;
     color: white;
     padding: 10px 20px;
@@ -453,6 +465,6 @@ body[data-theme="dark"] .nav-button {
     font-weight: bold;
 }
 
-#Scontactbtn:hover {
+#Contactbtn:hover {
     background-color: #0056b3;
 }
