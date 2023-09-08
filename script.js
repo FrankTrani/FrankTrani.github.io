@@ -5,13 +5,16 @@ function toggleTheme() {
     const themeIcon = document.getElementById("themeIcon");
     const themeToggle = document.getElementById("themeToggle"); // Assuming your button has this id
 
+
     let newTheme = "dark";
     if (currentTheme === "dark") {
         newTheme = "light";
         themeIcon.textContent = "🌙"; // Moon for dark mode
+        themeToggle.checked = true;
     } else {
         newTheme = "dark";
         themeIcon.textContent = "☀️"; // Sun for light mode
+        themeToggle.checked = false;
     }
 
     // Add the spin class to make the button rotate
@@ -43,6 +46,26 @@ function calculateInfo() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+var modal = document.getElementById("contactModal");
+var btn = document.getElementById("contactBtn");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+});
+
 // Run the function when the page loads
 window.onload = function() {
     // Calculate info if elements are present
@@ -63,3 +86,5 @@ window.onload = function() {
         window.addEventListener("scroll", setActiveNavButton);
     }
 };
+
+

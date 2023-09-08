@@ -31,20 +31,6 @@ body[data-theme="light"] .skill-box {
     background-color: rgb(0, 255, 0);
 }
 
-.contact-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-button:hover {
-    background-color: #0056b3;
-}
 
 
 #projects {
@@ -146,23 +132,23 @@ body[data-theme="light"] #project-list a {
 body[data-theme="light"],
 body:not([data-theme]) {
     background-color: white;
-    color: black;
+    color:  rgb(42, 42, 42);
 }
 
 body[data-theme="light"] header,
 body:not([data-theme]) header {
     background-color: white;
-    color: black;
+    color:  rgb(42, 42, 42);
 }
 
 /* Dark mode styles */
 body[data-theme="dark"] {
-    background-color: black;
+    background-color:  rgb(31, 31, 31);
     color: white;
 }
 
 body[data-theme="dark"] header {
-    background-color: black;
+    background-color:  rgb(42, 42, 42);
     color: white;
 }
 
@@ -194,7 +180,7 @@ header {
     margin: 0 5px;  /* Space the text out a bit */
     padding: 5px 10px;
     text-decoration: none;
-    font-size: 24px;  /* Same size as sun/moon icon */
+    font-size: 20px;
     border: 1px solid transparent;
     border-radius: 2px;
     transition: all 0.3s ease;
@@ -221,13 +207,13 @@ body[data-theme="dark"] .nav-button {
 #swap {
     position: fixed;
     top: 0;
-    right: 350px;
+    right: 320px;
     background-color: inherit;
-    padding: 5px;
+    padding: 0px;
     z-index: 1;
     border: 2px solid #ccc;
     border-radius: 40px;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;  /* Center text vertically */
 }
@@ -236,8 +222,8 @@ body[data-theme="dark"] .nav-button {
 #themeToggle {
     float: right;
     margin-left: 50px;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: transparent;
     cursor: pointer;
@@ -247,11 +233,11 @@ body[data-theme="dark"] .nav-button {
 }
 
 #themeIcon {
-    font-size: 24px;
+    font-size: 40px;
 }
 
 #themeToggle.spin {
-    animation: spin 1s ease-in-out;
+    animation: spin 1s ease;
 }
 
 @keyframes spin {
@@ -266,4 +252,207 @@ body[data-theme="dark"] .nav-button {
 #Name {
     margin: 8em;
     text-align: center;
+}
+
+#box {
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(16, 14, 20); 
+}
+
+.switch-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    justify-content: center;
+    margin: auto;
+    height: 55px;
+  }
+  
+  .switch-button .switch-outer {
+    height: 100%;
+    background: #252532;
+    width: 115px;
+    border-radius: 165px;
+    -webkit-box-shadow: inset 0px 5px 10px 0px #16151c, 0px 3px 6px -2px #403f4e;
+    box-shadow: inset 0px 5px 10px 0px #16151c, 0px 3px 6px -2px #403f4e;
+    border: 1px solid #32303e;
+    padding: 6px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .switch-button .switch-outer input[type="checkbox"] {
+    opacity: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+  }
+  
+  .switch-button .switch-outer .button-toggle {
+    height: 42px;
+    width: 42px;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#3b3a4e),
+      to(#272733)
+    );
+    background: -o-linear-gradient(#3b3a4e, #272733);
+    background: linear-gradient(#3b3a4e, #272733);
+    border-radius: 100%;
+    -webkit-box-shadow: inset 0px 5px 4px 0px #424151, 0px 4px 15px 0px #0f0e17;
+    box-shadow: inset 0px 5px 4px 0px #424151, 0px 4px 15px 0px #0f0e17;
+    position: relative;
+    z-index: 2;
+    -webkit-transition: left 0.3s ease-in;
+    -o-transition: left 0.3s ease-in;
+    transition: left 0.3s ease-in;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .switch-button
+    .switch-outer
+    input[type="checkbox"]:checked
+    + .button
+    .button-toggle {
+    left: 58%;
+  }
+  
+  .switch-button
+    .switch-outer
+    input[type="checkbox"]:checked
+    + .button
+    .button-indicator {
+    -webkit-animation: indicator 1s forwards;
+    animation: indicator 1s forwards;
+  }
+  
+  .switch-button .switch-outer .button {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+  }
+  
+  .switch-button .switch-outer .button-indicator {
+    height: 25px;
+    width: 25px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: 3px solid #ef565f;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 10px;
+    position: relative;
+  }
+  
+  @-webkit-keyframes indicator {
+    30% {
+      opacity: 0;
+    }
+  
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 1;
+      border: 3px solid #60d480;
+      left: -68%;
+    }
+  }
+  
+  @keyframes indicator {
+    30% {
+      opacity: 0;
+    }
+  
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 1;
+      border: 3px solid #60d480;
+      left: -68%;
+    }
+  }
+
+  #skills, 
+#skills h2, 
+#skills h3, 
+#skills .skill-box {
+    color: white;
+}
+
+/* Modal styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#contactBtn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#Scontactbtn:hover {
+    background-color: #0056b3;
 }

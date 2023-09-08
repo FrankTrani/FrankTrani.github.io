@@ -11,7 +11,16 @@
 
     <header>
     <nav id = "swap">
-        <button id="themeToggle"><span id="themeIcon">☀️</span></button>
+        <!-- <button id="themeToggle"><span id="themeIcon">☀️</span></button> -->
+        <label class="switch-button" for="switch" onclick="toggleTheme()">
+            <div class="switch-outer">
+              <input id="themeToggle" type="checkbox">
+              <div class="button">
+                <span class="button-toggle" id = "themeIcon">☀️</span>
+                <span class="button-indicator"></span>
+              </div>
+            </div>
+          </label>
     </nav>
         
         <nav id="top-nav">
@@ -28,6 +37,34 @@
         <p>I am <span id="age"></span> years old and enjoy Cybersecurity, robotics, and app development. I have been programming for <span id="yearsProgramming"></span> years.</p>
     </section>
 
+<!-- Contact Me Button -->
+<button id="contactBtn" class="contact-button">Contact Me</button>
+
+<!-- The Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/mgejyqzk" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="_replyto" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <!-- Optional: customize the email subject -->
+            <input type="hidden" name="_subject" value="New contact from portfolio">
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+
+    <section id="box">
     <section id="skills">
         <h2>My Tech Stack</h2>
         <div class="skill-category">
@@ -49,11 +86,6 @@
         </div>
     </section>
 
-    <section id="contact">
-        <a href="mailto:franktrani7887@gmail.com?subject=Contact%20from%20Portfolio" class="contact-button">
-            Contact Me
-        </a>
     </section>
-
 </body>
 </html>
