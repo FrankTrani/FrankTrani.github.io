@@ -1,51 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Links - Frank Trani</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="script.js"></script>
-</head>
-<body id>
-    <header>
-        <nav id = "swap">
-            <label class="switch-button" for="switch" onclick="toggleTheme()">
-                <div class="switch-outer">
-                  <input id="themeToggle" type="checkbox">
-                  <div class="button">
-                    <span class="button-toggle" id = "themeIcon">☀️</span>
-                    <span class="button-indicator"></span>
-                  </div>
-                </div>
-              </label>
-        </nav>
-            
-            <nav id="top-nav">
-                <a href="index.html" class="nav-button ">Home</a>
-                <a href="projects.html" class="nav-button ">Projects</a>
-                <a href="links.html" class="nav-button active">Links</a>
-            </nav>
+    <head>
+        <title>Links - Frank Trani</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <script src="script.js"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+    </head>
+    <body>
+        <header>
+            <span>Frank Trani</span>
+
+            <div class="nav-wrapper">
+                <button class="switch-theme" id="switch-theme-btn">
+                    Theme
+                </button>
+
+                <nav class="top-nav">
+                    <ul>
+                        <li>
+                            <a href="index.html" class="nav-button active"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a href="projects.html" class="nav-button"
+                                >Projects</a
+                            >
+                        </li>
+                        <li>
+                            <a href="links.html" class="nav-button">Links</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
-    <header>
-        <h1>Links</h1>
-    </header>
-
-    <section id="links">
-        <h2>My Links</h2>
-        <div class="link-preview">
-            <a href="https://github.com/Schizzle13" target="_blank">
-                <img src="github-mark.png" alt="GitHub">
-                <span></span>
-            </a>
-        </div>
-        <div class="link-preview">
-            <a href="https://www.youtube.com/@FrankTrani" target="_blank">
-                <img src="youtube-icon.png" alt="YouTube">
-                <span></span>
-            </a>
-        </div>
-        <!-- Add more links here -->
-    </section>
-
-</body>
+        <main class="container">
+            <section class="links">
+                <h1>My Links</h1>
+                <div class="link-preview">
+                    <a href="https://github.com/Schizzle13" target="_blank">
+                        <img src="github-mark.png" alt="GitHub" />
+                        <span></span>
+                    </a>
+                </div>
+                <div class="link-preview">
+                    <a
+                        href="https://www.youtube.com/@FrankTrani"
+                        target="_blank"
+                    >
+                        <img src="youtube-icon.png" alt="YouTube" />
+                        <span></span>
+                    </a>
+                </div>
+                <!-- Add more links here -->
+            </section>
+        </main>
+    </body>
 </html>

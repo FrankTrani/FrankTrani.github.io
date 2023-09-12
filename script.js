@@ -1,32 +1,11 @@
 // Function to toggle between light and dark mode
 function toggleTheme() {
-    const body = document.body;
-    const currentTheme = body.getAttribute("data-theme");
-    const themeIcon = document.getElementById("themeIcon");
-    const themeToggle = document.getElementById("themeToggle"); // Assuming your button has this id
+    const currentTheme = document.documentElement.getAttribute("data-theme");
 
+    let newTheme = currentTheme == "dark" ? "light" : "dark";
 
-    let newTheme = "dark";
-    if (currentTheme === "dark") {
-        newTheme = "light";
-        themeIcon.textContent = "🌙"; // Moon for dark mode
-        themeToggle.checked = true;
-    } else {
-        newTheme = "dark";
-        themeIcon.textContent = "☀️"; // Sun for light mode
-        themeToggle.checked = false;
-    }
-
-    // Add the spin class to make the button rotate
-    themeToggle.classList.add("spin");
-
-    // Remove the spin class after 1 second (the duration of the spin animation)
-    setTimeout(() => {
-        themeToggle.classList.remove("spin");
-    }, 1000);
-
-    body.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme); // Save the current theme to localStorage
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
 }
 
 function calculateInfo() {
@@ -42,49 +21,18 @@ function calculateInfo() {
         document.getElementById("age").innerText = age;
     }
     if (document.getElementById("yearsProgramming")) {
-        document.getElementById("yearsProgramming").innerText = yearsProgramming;
+        document.getElementById("yearsProgramming").innerText =
+            yearsProgramming;
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-var modal = document.getElementById("contactModal");
-var btn = document.getElementById("contactBtn");
-var span = document.getElementsByClassName("close")[0];
+document.addEventListener("DOMContentLoaded", function () {
+    document
+        .getElementById("switch-theme-btn")
+        .addEventListener("click", toggleTheme);
 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+    calculateInfo();
 });
 
-// Run the function when the page loads
-window.onload = function() {
-    // Calculate info if elements are present
-    calculateInfo();
-
-    // Retrieve saved theme from localStorage or set to dark as default
-    const savedTheme = localStorage.getItem("theme") || "dark";
-    document.body.setAttribute("data-theme", savedTheme);
-
-    // Add event listener to the theme toggle button
-    if (document.getElementById("themeToggle")) {
-        document.getElementById("themeToggle").addEventListener("click", toggleTheme);
-    }
-
-    // Check if setActiveNavButton is defined before adding event listeners
-    if (typeof setActiveNavButton === "function") {
-        window.addEventListener("load", setActiveNavButton);
-        window.addEventListener("scroll", setActiveNavButton);
-    }
-};
-
-
+const savedTheme = localStorage.getItem("theme") || "dark";
+document.documentElement.setAttribute("data-theme", savedTheme);
