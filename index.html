@@ -1,89 +1,105 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Frank Trani's Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="script.js"></script>
-</head>
-<body id>
-    
+    <head>
+        <title>Frank Trani's Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <span>Frank Trani</span>
 
-    <header>
-    <nav id = "swap">
-        <label class="switch-button" for="switch" onclick="toggleTheme()">
-            <div class="switch-outer">
-              <input id="themeToggle" type="checkbox">
-              <div class="button">
-                <span class="button-toggle" id = "themeIcon">☀️</span>
-                <span class="button-indicator"></span>
-              </div>
+            <nav class="top-nav">
+                <ul>
+                    <li>
+                        <a href="index.html" class="nav-button active">Home</a>
+                    </li>
+                    <li>
+                        <a href="projects.html" class="nav-button">Projects</a>
+                    </li>
+                    <li><a href="links.html" class="nav-button">Links</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section class="intro">
+                <h1 class="title">Hi, I'm Frank Trani</h1>
+                <h2 class="subtitle">
+                    A Programmer & Cybersecurity Enthusiast
+                </h2>
+                <p class="tagline">
+                    I am <span id="age"></span> years old and enjoy
+                    Cybersecurity, robotics, and app development. I have been
+                    programming for <span id="yearsProgramming"></span> years.
+                </p>
+
+                <!-- Contact Me Button -->
+                <button id="contactBtn" class="btn">Contact Me</button>
+            </section>
+
+            <!-- The Modal -->
+            <div id="contactModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Contact Me</h2>
+                    <form
+                        action="https://formspree.io/f/mgejyqzk"
+                        method="post"
+                    >
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required />
+
+                        <label for="email">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="_replyto"
+                            required
+                        />
+
+                        <label for="message">Message:</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            required
+                        ></textarea>
+
+                        <!-- Optional: customize the email subject -->
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="New contact from portfolio"
+                        />
+
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
             </div>
-          </label>
-    </nav>
-        
-        <nav id="top-nav">
-            <a href="index.html" class="nav-button active">Home</a>
-            <a href="projects.html" class="nav-button ">Projects</a>
-            <a href="links.html" class="nav-button">Links</a>
-        </nav>
-    </header>
 
-    <section id="Name">
-    <h1>Hi, I'm Frank Trani</h1>
-        <h2>A Programmer & Cybersecurity Enthusiast</h2>
+            <section class="languages">
+                <h2>My Tech Stack</h2>
 
-        <p>I am <span id="age"></span> years old and enjoy Cybersecurity, robotics, and app development. I have been programming for <span id="yearsProgramming"></span> years.</p>
-    </section>
+                <h3>Programming Languages</h3>
+                <div class="skill-category">
+                    <div class="skill-box">Python</div>
+                    <div class="skill-box">Javascript</div>
+                    <div class="skill-box">HTML</div>
+                    <div class="skill-box">CSS</div>
+                    <div class="skill-box">C</div>
+                </div>
 
-<!-- Contact Me Button -->
-<button id="contactBtn" class="contact-button">Contact Me</button>
+                <h3>Databases</h3>
+                <div class="skill-category">
+                    <div class="skill-box">MySQL</div>
+                    <div class="skill-box">MongoDB</div>
+                </div>
 
-<!-- The Modal -->
-<div id="contactModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/mgejyqzk" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="_replyto" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <!-- Optional: customize the email subject -->
-            <input type="hidden" name="_subject" value="New contact from portfolio">
-            
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-</div>
-
-
-    <section id="box">
-    <section id="skills">
-        <h2>My Tech Stack</h2>
-        <div class="skill-category">
-            <h3>Programming Languages</h3>
-            <div class="skill-box">Python</div>
-            <div class="skill-box">Javascript</div>
-            <div class="skill-box">HTML</div>
-            <div class="skill-box">CSS</div>
-            <div class="skill-box">C</div>
-        </div>
-        <div class="skill-category">
-            <h3>Databases</h3>
-            <div class="skill-box">MySQL</div>
-            <div class="skill-box">MongoDB</div>
-        </div>
-        <div class="skill-category">
-            <h3>Frameworks</h3>
-            <div class="skill-box">Flask</div>
-        </div>
-    </section>
-
-    </section>
-</body>
+                <h3>Frameworks</h3>
+                <div class="skill-category">
+                    <div class="skill-box">Flask</div>
+                </div>
+            </section>
+        </main>
+    </body>
 </html>
