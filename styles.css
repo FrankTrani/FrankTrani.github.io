@@ -81,10 +81,11 @@ header span {
     background: var(--bg-tint);
     border: 0;
     color: var(--text-color-secondary);
-    padding: 10px;
     margin-right: 10px;
     border-radius: 10px;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
 }
 
 .switch-theme:hover {
