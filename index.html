@@ -1,138 +1,158 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Frank Trani's Portfolio</title>
-        <link rel="stylesheet" type="text/css" href="styles.css" />
-        <script src="script.js"></script>
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-    </head>
-    <body>
-        <header>
-            <span>Frank Trani</span>
 
-            <div class="nav-wrapper">
-                <button class="switch-theme" id="switch-theme-btn">
-                
-                </button>
+<head>
+    <title>Frank Trani's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
 
-                <nav class="top-nav">
-                    <ul>
-                        <li>
-                            <a href="index.html" class="nav-button active"
-                                >Home</a
-                            >
-                        </li>
-                        <li>
-                            <a href="projects.html" class="nav-button"
-                                >Projects</a
-                            >
-                        </li>
-                        <li>
-                            <a href="links.html" class="nav-button">Links</a>
-                        </li>
-                    </ul>
-                </nav>
+<body>
+    <header>
+        <span>Frank Trani</span>
+
+        <div class="nav-wrapper">
+            <button class="switch-theme" id="switch-theme-btn">
+
+            </button>
+
+            <nav class="top-nav">
+                <ul>
+                    <li>
+                        <a href="index.html" class="nav-button active">Home</a>
+                    </li>
+                    <li>
+                        <a href="links.html" class="nav-button">Links</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h1 class="title">Hi, I'm Frank Trani</h1>
+            <h2 class="subtitle">
+                A Programmer & Cybersecurity Enthusiast
+            </h2>
+            <p class="tagline">
+                I am <span id="age"></span> years old and enjoy
+                Cybersecurity, robotics, and app development. I have been
+                programming for <span id="yearsProgramming"></span> years.
+            </p>
+
+            <!-- Contact Me Button -->
+            <button id="contactBtn" class="btn">Contact Me</button>
+        </section>
+
+        <!-- The Modal -->
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Contact Me</h2>
+                <form action="https://formspree.io/f/mgejyqzk" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required />
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="_replyto" required />
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <!-- Optional: customize the email subject -->
+                    <input type="hidden" name="_subject" value="New contact from portfolio" />
+
+                    <input type="submit" value="Submit" />
+                </form>
             </div>
-        </header>
+        </div>
 
-        <main class="container">
-            <section class="intro">
-                <h1 class="title">Hi, I'm Frank Trani</h1>
-                <h2 class="subtitle">
-                    A Programmer & Cybersecurity Enthusiast
-                </h2>
-                <p class="tagline">
-                    I am <span id="age"></span> years old and enjoy
-                    Cybersecurity, robotics, and app development. I have been
-                    programming for <span id="yearsProgramming"></span> years.
-                </p>
+        <section class="languages">
+            <h2>My Tech Stack</h2>
 
-                <!-- Contact Me Button -->
-                <button id="contactBtn" class="btn">Contact Me</button>
-            </section>
-
-            <!-- The Modal -->
-            <div id="contactModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Contact Me</h2>
-                    <form
-                        action="https://formspree.io/f/mgejyqzk"
-                        method="post"
-                    >
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required />
-
-                        <label for="email">Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="_replyto"
-                            required
-                        />
-
-                        <label for="message">Message:</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            required
-                        ></textarea>
-
-                        <!-- Optional: customize the email subject -->
-                        <input
-                            type="hidden"
-                            name="_subject"
-                            value="New contact from portfolio"
-                        />
-
-                        <input type="submit" value="Submit" />
-                    </form>
-                </div>
+            <h3>Programming Languages</h3>
+            <div class="skill-category">
+                <div class="skill-box">Python</div>
+                <div class="skill-box">Javascript</div>
+                <div class="skill-box">HTML</div>
+                <div class="skill-box">CSS</div>
+                <div class="skill-box">C</div>
             </div>
 
-            <section class="languages">
-                <h2>My Tech Stack</h2>
+            <h3>Databases</h3>
+            <div class="skill-category">
+                <div class="skill-box">MySQL</div>
+                <div class="skill-box">MongoDB</div>
+            </div>
 
-                <h3>Programming Languages</h3>
-                <div class="skill-category">
-                    <div class="skill-box">Python</div>
-                    <div class="skill-box">Javascript</div>
-                    <div class="skill-box">HTML</div>
-                    <div class="skill-box">CSS</div>
-                    <div class="skill-box">C</div>
-                </div>
+            <h3>Frameworks</h3>
+            <div class="skill-category">
+                <div class="skill-box">Flask</div>
+            </div>
+        </section>
+    </main>
 
-                <h3>Databases</h3>
-                <div class="skill-category">
-                    <div class="skill-box">MySQL</div>
-                    <div class="skill-box">MongoDB</div>
-                </div>
+    <script>
+        var modal = document.getElementById("contactModal");
+        var btn = document.getElementById("contactBtn");
+        var span = document.getElementsByClassName("close")[0];
 
-                <h3>Frameworks</h3>
-                <div class="skill-category">
-                    <div class="skill-box">Flask</div>
-                </div>
-            </section>
-        </main>
+        btn.onclick = function () {
+            modal.style.display = "block";
+        };
 
-        <script>
-            var modal = document.getElementById("contactModal");
-            var btn = document.getElementById("contactBtn");
-            var span = document.getElementsByClassName("close")[0];
+        span.onclick = function () {
+            modal.style.display = "none";
+        };
 
-            btn.onclick = function () {
-                modal.style.display = "block";
-            };
-
-            span.onclick = function () {
+        window.onclick = function (event) {
+            if (event.target == modal) {
                 modal.style.display = "none";
-            };
+            }
+        };
+    </script>
 
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            };
-        </script>
-    </body>
+    <main class="container">
+        <section class="projects">
+            <h1>My Projects</h1>
+            <ul class="project-list">
+                <li>
+                    <a href="https://github.com/yourusername/project1" target="_blank">1</a>
+                </li>
+                <li>
+                    <a href="https://github.com/yourusername/project2" target="_blank">2</a>
+                </li>
+                <li>
+                    <a href="https://github.com/yourusername/project2" target="_blank">3</a>
+                </li>
+                <li>
+                    <a href="https://github.com/yourusername/project2" target="_blank">4</a>
+                </li>
+                <li>
+                    <a href="https://github.com/yourusername/project2" target="_blank">5</a>
+                </li>
+                <li>
+                    <a href="https://github.com/yourusername/project2" target="_blank">6</a>
+                </li>
+                <li>
+                    <a href="https://github.com/yourusername/project2" target="_blank">7</a>
+                </li>
+                <li>
+                    <a href="https://github.com/yourusername/project2" target="_blank">8</a>
+                </li>
+                <li>
+                    <a href="https://github.com/yourusername/project2" target="_blank">9</a>
+                </li>
+                <li>
+                    <a href="https://github.com/yourusername/project2" target="_blank">10</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+
+</body>
+
 </html>

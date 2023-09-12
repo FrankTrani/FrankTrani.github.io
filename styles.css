@@ -217,11 +217,12 @@ header span {
 
 .project-list a {
     border-radius: 10px;
-    background: var(--main-color);
+    background: var(--bg-tint);
     display: block;
     margin: 10px 0;
     padding: 10px 20px;
     color: #fff;
+    text-align: left;
 }
 
 /* Modal styles */
@@ -273,6 +274,7 @@ header span {
 #modal-content h2 {
     color: white;
 }
+
 .close {
     color: #aaa;
     float: right;
