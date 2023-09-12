@@ -2,15 +2,24 @@
 function toggleTheme() {
     const currentTheme = document.documentElement.getAttribute("data-theme");
 
-    let newTheme = currentTheme == "dark" ? "light" : "dark";
+    let newTheme = currentTheme == "dark";
 
-    document.documentElement.setAttribute("data-theme", newTheme);
+    if (currentTheme === "dark") {
+        newTheme = "light";
+        themeIcon.textContent = "🌙";
+        themeToggle.checked = true;
+    } else {
+        newTheme = "dark";
+        themeIcon.textContent = "☀️";
+        themeToggle.checked = false;
+    }
+    document.documentElement.setAttribute("switch-theme-btn", newTheme);
     localStorage.setItem("theme", newTheme);
 }
 
 function calculateInfo() {
-    const birthYear = 2006; // Replace with your birth year
-    const startYear = 2018; // Replace with the year you started programming
+    const birthYear = 2006;
+    const startYear = 2018;
 
     const currentYear = new Date().getFullYear();
     const age = currentYear - birthYear;
