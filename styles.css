@@ -24,7 +24,7 @@
 }
 
 body {
-    font-family: Inter, sans-serif;
+    font-family: Comic Sans MS;
     font-size: 16px;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -158,11 +158,14 @@ header span {
 
 .languages h3 {
     margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: left;
+    text-align: left;
 }
 
 .skill-category {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 10px;
     flex-wrap: wrap;
 }
