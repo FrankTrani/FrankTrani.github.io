@@ -49,3 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
     calculateInfo();
     setIcon(savedTheme);
 });
+
+$(document).ready(function() {
+    $(".trigger").click(function() {
+      $(".menu").toggleClass("active"); 
+    });
+  });
