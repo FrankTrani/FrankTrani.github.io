@@ -24,7 +24,7 @@
 }
 
 body {
-    font-family: Garamond , serif;
+    font-family: Garamond, serif;
     font-size: 16px;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -36,26 +36,6 @@ a {
     text-decoration: none;
 }
 
-button {
-    font-family: Inter, sans-serif;
-    font-size: 1rem;
-}
-
-button.btn {
-    border: 0;
-    padding: 10px 20px;
-    background-color: var(--main-color);
-    border-radius: 10px;
-    cursor: pointer;
-    color: #fff;
-    font-weight: bold;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-button.btn:hover {
-    transform: scaleY(1.05);
-    background-color: #00448d;
-}
 
 /* Navigation Bar */
 header {
@@ -136,14 +116,15 @@ header span {
 
 .intro .tagline {
     margin-bottom: 40px;
-    
+
 }
 
 .intro h1,
 .intro h2,
 .intro .tagline {
-    text-align: left;    
-    }
+    text-align: left;
+}
+
 .languages {
     background: var(--bg-tint);
     margin-top: 50px;
@@ -298,4 +279,99 @@ header span {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+
+
+
+#contactBtn {
+    min-width: 150px;
+    min-height: 50px;
+    font-family: Garamond, serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
+    border: none;
+    border-radius: 100px;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, .64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+
+#contactBtn::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(150px + 30px);
+    min-height: calc(50px + 1px);
+    border: 6px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0, 255, 203, .64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+
+#contactBtn:hover,
+#contactBtn:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+
+#contactBtn:hover::before,
+#contactBtn:focus::before {
+    opacity: 1;
+}
+
+#contactBtn::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 6px solid #00FFCB;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+#contactBtn:hover::after,
+#contactBtn:focus::after {
+    animation: none;
+    display: none;
+}
+
+@keyframes ring {
+    0% {
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+    }
+    100% {
+      width: 200px;
+      height: 200px;
+      opacity: 0;
+    }
+  }
+
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html,
+body {
+    height: 100%;
 }
