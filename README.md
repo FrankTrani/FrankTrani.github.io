@@ -1,4 +1,4 @@
-# Frank Trani's Portfolio Website
+# My Portfolio Website
 
 Welcome to the repository for [Frank Trani's Portfolio Website](https://ftrani.com). This website serves as a showcase of my projects, skills, and personal blog, where I share insights on a variety of tech-related topics including artificial intelligence, robotics, backend development, and cybersecurity.
 
