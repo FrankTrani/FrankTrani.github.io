@@ -1,0 +1,13 @@
+
+title: Frank Trani's Blog
+email: frani@ftrani.com
+description: A personal blog about web development and technology.
+baseurl: ""
+url: "https://ftrani.com"
+twitter_username:
+github_username:
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed

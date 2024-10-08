@@ -1,0 +1,726 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dark theme */
+:root {
+  --main-color: #0056b3;
+  --bg-color: #0d0f13;
+  --bg-tint: #1b1e2a;
+  --text-color: #d3f2e7;
+  --text-color-secondary: #e3f6ef;
+}
+
+/* Light theme */
+:root[data-theme="light"] {
+  --bg-color: #bdf0f8;
+  --bg-tint: #e6fbff;
+  --text-color: #05363d;
+  --text-color-secondary: #023036;
+}
+
+/* Body and General Typography */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* General Spacing */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  padding: 20px;
+}
+
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Navigation Bar Styling */
+header {
+  background-color: var(--bg-tint);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* Switch Theme Button (Left-Aligned) */
+.switch-theme {
+  background-color: var(--bg-color);
+  border: 0;
+  color: var(--text-color-secondary);
+  border-radius: 50%;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.switch-theme:hover {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  transform: scale(1.1);
+}
+
+/* Desktop Navigation (Right-Aligned) */
+.top-nav {
+  display: flex;
+  align-items: center;
+}
+
+.top-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.top-nav ul li a {
+  text-decoration: none;
+  color: var(--text-color-secondary);
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.top-nav ul li a:hover,
+.top-nav ul li a.active {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+/* Hamburger Menu Button (Right-Aligned) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--main-color);
+  cursor: pointer;
+  z-index: 200;
+  position: relative;
+}
+
+/* Full-Screen Menu for Small Screens */
+.fullscreen-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 150;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.fullscreen-nav.active {
+  display: flex;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Full-Screen Menu Items */
+.fullscreen-nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+.fullscreen-nav ul li {
+  margin: 20px 0;
+}
+
+.fullscreen-nav ul li a {
+  text-decoration: none;
+  color: var(--main-color);
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.fullscreen-nav ul li a:hover {
+  color: var(--text-color-secondary);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .top-nav {
+    display: none; /* Hide top nav on small screens */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger button */
+  }
+
+  .switch-theme {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+}
+
+
+
+
+
+
+
+/* Introduction Section */
+.intro {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.intro .title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: var(--main-color);
+}
+
+.intro .subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-color-secondary);
+  margin-bottom: 20px;
+}
+
+.intro .tagline {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Titles */
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  color: var(--text-color-secondary);
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(135deg, #0056b3, #007bff);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 8px 15px rgba(0, 91, 234, 0.2);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 15px 20px rgba(0, 91, 234, 0.4);
+}
+
+/* Projects Section */
+.projects {
+  padding: 40px 20px;
+  background-color: var(--bg-tint);
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+.projects h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: var(--main-color);
+  text-align: left;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Project Card */
+.project-card {
+  background: linear-gradient(135deg, #0056b3, #007bff);
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  position: relative;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: white;
+  font-weight: 600;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  color: #d3e0f1;
+}
+
+.project-link {
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid white;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.project-link:hover {
+  color: #d3e0f1;
+  border-bottom-color: #d3e0f1;
+}
+
+/* Project Card Hover Effect */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #004aad, #006be1);
+}
+
+/* Tech Stack Section */
+.tech-stack {
+  padding: 40px 20px;
+  background-color: var(--bg-tint);
+  margin-bottom: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tech-stack h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 800;
+  color: var(--main-color);
+  text-align: left;
+}
+
+/* Tech Container */
+.tech-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.tech-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+.tech-category ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tech-category ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--text-color-secondary);
+  transition: color 0.3s ease;
+}
+
+.tech-category ul li:hover {
+  color: var(--main-color);
+}
+
+/* Section Dividers */
+.tech-category {
+  border-left: 3px solid var(--main-color);
+  padding-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .tech-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Links Page */
+.links {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.links h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+/* Link Cards */
+.link-card {
+  display: inline-block;
+  background-color: var(--bg-tint);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px;
+  width: 200px;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.link-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.link-card a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.link-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.link-card:hover .link-icon {
+  transform: scale(1.1);
+}
+
+.link-card span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* About Me Section */
+.about-me {
+  padding: 50px 20px;
+  background-color: var(--bg-tint);
+  border-radius: 10px;
+  margin-bottom: 50px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-me h1 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  font-weight: 800;
+  color: var(--main-color);
+  text-align: center;
+}
+
+.about-me-content section {
+  margin-bottom: 40px;
+}
+
+.about-me-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+.about-me-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color-secondary);
+  margin-bottom: 20px;
+}
+
+/* Icons */
+.about-me-content h2 i {
+  margin-right: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-tint);
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Main container */
+main {
+  flex: 1; /* Ensures the main content area takes up the available space */
+}
+
+footer nametag {
+  font-weight: 600;
+  padding: 40px;
+}
+
+b {
+  float: right;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+/* Contact Section */
+.contact {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 30px 20px;
+  background-color: var(--bg-tint);
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Make the entire Contact Me section clickable */
+.contact-link {
+  text-decoration: none;
+  color: inherit; /* Inherit the color to keep the section styling */
+  display: block;
+  padding: 30px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-link:hover {
+  background-color: var(--main-color); /* Change background on hover */
+  color: white; /* Change text color on hover */
+}
+
+.contact-link h2,
+.contact-link p {
+  margin: 0;
+}
+
+.contact-link span {
+  font-weight: bold;
+}
+
+/* Icon */
+.contact-link h2 i {
+  margin-right: 10px;
+}
+
+/* Email link */
+.contact-link:hover span {
+  color: white;
+}
+
+/* Blog Posts Grid */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Adjusts the number of columns based on screen size */
+  gap: 20px; /* Space between the cards */
+  margin-top: 30px;
+}
+
+/* Blog Post Card */
+.post-card {
+  background-color: var(--bg-tint);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card h3 a {
+  text-decoration: none;
+  color: var(--main-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.post-card p {
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+  margin-top: 10px;
+}
+
+/* Hover Effects for the Blog Post Card */
+.post-card:hover {
+  transform: translateY(-5px); /* Slight upward lift on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+.post-card:hover h3 a {
+  color: var(--main-color); /* Change text color on hover */
+}
+
+/* Responsive design to ensure it looks good on smaller screens */
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}
+
+/* Container: Increase max-width for better spacing on larger screens */
+.container {
+  width: 90%;
+  max-width: 1200px; /* Increased to give more space */
+  margin: 0 auto;
+  margin-bottom: 100px;
+  padding: 40px; /* Increased padding for better readability */
+}
+
+/* Blog Title Section */
+.blog-title {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.blog-title h1 {
+  font-size: 3.5rem; /* Larger text for the blog title */
+  font-weight: 800;
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+/* Blog Content Section */
+.blog-content {
+  margin-top: 40px;
+  line-height: 1.8; /* Better line spacing for readability */
+  padding: 0 20px; /* Extra padding for better spacing */
+}
+
+.blog-content h2 {
+  font-size: 2rem; /* Increased size for headings */
+  font-weight: 700;
+  color: var(--main-color);
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.blog-content p {
+  font-size: 1.2rem; /* Larger font for readability */
+  color: var(--text-color-secondary);
+  margin-bottom: 20px;
+}
+
+/* Blog Links Section */
+.blog-links {
+  margin-top: 50px;
+  padding: 30px;
+  background-color: var(--bg-tint);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-links h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.blog-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog-links li {
+  margin-bottom: 10px;
+}
+
+.blog-links a {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--main-color);
+  text-decoration: none;
+  border-bottom: 2px solid var(--main-color);
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.blog-links a:hover {
+  color: var(--text-color-secondary);
+  border-bottom-color: var(--text-color-secondary);
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px; /* Reduced padding on smaller screens */
+  }
+
+  .blog-title h1 {
+    font-size: 2.5rem; /* Smaller title size on mobile */
+  }
+
+  .blog-content h2 {
+    font-size: 1.8rem; /* Slightly smaller headings */
+  }
+
+  .blog-content p {
+    font-size: 1rem; /* Smaller text for mobile readability */
+  }
+}
+
