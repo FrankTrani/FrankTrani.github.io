@@ -1,11 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Theme Variables */
 /* Dark theme */
 :root {
   --main-color: #0056b3;
@@ -16,49 +18,32 @@
 }
 
 /* Light theme */
-:root[data-theme="light"] {
+:root[data-theme='light'] {
   --bg-color: #bdf0f8;
   --bg-tint: #e6fbff;
   --text-color: #05363d;
   --text-color-secondary: #023036;
 }
 
-/* Body and General Typography */
+/* Global Styles */
 html,
 body {
   height: 100%;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  font-family: "JetBrains Mono", sans-serif;
+  font-family: 'JetBrains Mono', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
 }
 
-/* General Spacing */
+/* Container */
 .container {
   width: 90%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 100px;
-  padding: 20px;
-}
-
-
-
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "JetBrains Mono", sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  padding: 40px;
 }
 
 /* Navigation Bar Styling */
@@ -73,15 +58,29 @@ header {
 
 .nav-wrapper {
   display: flex;
-  justify-content: right;
-  align-items: right;
+  justify-content: flex-end;
+  align-items: center;
   padding: 0 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Title Section (Left-Aligned) */
+.title-wrapper {
+  flex: 1; /* Take up available space on the left */
+  text-align: left;
+}
 
-/* Switch Theme Button (Left-Aligned) */
+.title2 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+}
+
+
+/* Switch Theme Button */
 .switch-theme {
   background-color: var(--bg-color);
   border: 0;
@@ -94,7 +93,6 @@ header {
   align-items: center;
   justify-content: center;
   margin-right: 10px;
-  
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -104,7 +102,7 @@ header {
   transform: scale(1.1);
 }
 
-/* Desktop Navigation (Right-Aligned) */
+/* Desktop Navigation */
 .top-nav {
   display: flex;
   align-items: center;
@@ -131,7 +129,7 @@ header {
   color: #fff;
 }
 
-/* Hamburger Menu Button (Right-Aligned) */
+/* Hamburger Menu Button */
 .hamburger {
   display: none;
   background: none;
@@ -203,13 +201,11 @@ header {
     left: 20px;
     top: 20px;
   }
+
+  .title2 {
+    display: none;
+  }
 }
-
-
-
-
-
-
 
 /* Introduction Section */
 .intro {
@@ -239,7 +235,7 @@ header {
   line-height: 1.8;
 }
 
-/* Titles */
+/* General Titles */
 .title {
   font-size: 4rem;
   font-weight: 800;
@@ -287,7 +283,6 @@ button:hover {
   margin-bottom: 30px;
   font-weight: 700;
   color: var(--main-color);
-  text-align: left;
 }
 
 /* Projects Grid */
@@ -360,7 +355,6 @@ button:hover {
   margin-bottom: 30px;
   font-weight: 800;
   color: var(--main-color);
-  text-align: left;
 }
 
 /* Tech Container */
@@ -393,7 +387,6 @@ button:hover {
   color: var(--main-color);
 }
 
-/* Section Dividers */
 .tech-category {
   border-left: 3px solid var(--main-color);
   padding-left: 15px;
@@ -505,7 +498,18 @@ main {
   flex: 1; /* Ensures the main content area takes up the available space */
 }
 
-footer nametag {
+/* Footer */
+footer {
+  background-color: var(--bg-tint);
+  padding: 15px;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+footer .nametag {
   font-weight: 600;
   padding: 40px;
 }
@@ -563,22 +567,36 @@ b {
 
 /* Blog Posts Grid */
 .posts-grid {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(300px, 1fr)
-  ); /* Adjusts the number of columns based on screen size */
-  gap: 20px; /* Space between the cards */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add spacing between posts */
   margin-top: 30px;
 }
 
-/* Blog Post Card */
-.post-card {
-  background-color: var(--bg-tint);
-  padding: 20px;
-  border-radius: 15px;
+/* Individual Post Item */
+.post-item {
+  background-color: var(--bg-tint); /* Use a tinted background */
+  padding: 15px;
+  border-radius: 12px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bp {
+  text-align: center;
+  padding: 5px;
+  border-radius: 3px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.post-item h3 {
+  margin-bottom: 8px;
+  color: var(--main-color);
+}
+
+.post-item p {
+  color: var(--text-color-secondary);
+  margin-top: 5px;
 }
 
 .post-card h3 a {
@@ -600,24 +618,12 @@ b {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
 }
 
-.post-card:hover h3 a {
-  color: var(--main-color); /* Change text color on hover */
-}
 
 /* Responsive design to ensure it looks good on smaller screens */
 @media (max-width: 768px) {
   .posts-grid {
     grid-template-columns: 1fr; /* Single column on smaller screens */
   }
-}
-
-/* Container: Increase max-width for better spacing on larger screens */
-.container {
-  width: 90%;
-  max-width: 1200px; /* Increased to give more space */
-  margin: 0 auto;
-  margin-bottom: 100px;
-  padding: 40px; /* Increased padding for better readability */
 }
 
 /* Blog Title Section */
@@ -720,21 +726,21 @@ b {
   padding: 20px;
 }
 
-/* Post Card Backpiece */
+/* Detailed Post Card */
 .post-card {
-  background-color: var(--bg-tint);  /* Use tinted background */
-  padding: 40px;                     /* Add padding for spacing */
-  margin: 30px auto;                 /* Center and add space around */
-  border-radius: 15px;               /* Rounded corners */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-  max-width: 900px;                  /* Ensure it doesn’t span too wide */
+  background-color: var(--bg-tint);
+  padding: 40px;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect on the Post Card */
-.post-card:hover {
-  transform: translateY(-5px);       /* Slight upward lift on hover */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+
+.post-card-detailed:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Post Titles */
@@ -750,30 +756,17 @@ b {
   font-size: 1.1rem;
   margin: 10px 0;
   color: var(--text-color-secondary);
-  line-height: 1.8;  /* Improve readability */
+  line-height: 1.8;
 }
 
 /* Content Area */
-/* Balanced whitespace handling for content */
 .content {
   white-space: pre-line; /* Preserve necessary spaces but wrap nicely */
-  word-break: break-word;    /* Prevent overflow on long words or URLs */
-  line-height: 1.8;          /* Maintain readability */
-  margin-bottom: 20px;       /* Add space between paragraphs */
-  max-width: 800px;          /* Ensure text doesn’t stretch too wide */
-  margin: 0 auto;            /* Center the content */
-}
-
-
-/* Footer Styling */
-footer {
-  background-color: var(--bg-tint);
-  padding: 15px;
-  text-align: center;
-  margin-top: auto;
-  width: 100%;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  word-break: break-word;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Responsive Adjustments */
