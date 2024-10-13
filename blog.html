@@ -33,7 +33,9 @@ permalink: /blog/
             <li><a href="{{ '/' | relative_url }}">Home</a></li>
             <li><a href="{{ '/links/' | relative_url }}">Links</a></li>
             <li><a href="{{ '/about-me/' | relative_url }}">About Me</a></li>
-            <li><a href="{{ '/blog/' | relative_url }}" class="active">Blog</a></li>
+            <li>
+              <a href="{{ '/blog/' | relative_url }}" class="active">Blog</a>
+            </li>
           </ul>
         </nav>
 
@@ -50,15 +52,15 @@ permalink: /blog/
 
     <main class="container">
       <section class="blog-posts">
-        <h1 class = "bp">{{ page.title }}</h1>
+        <h1 class="bp">{{ page.title }}</h1>
         <div class="posts-grid">
           <div class="post-card">
             <ul>
               {% for post in site.posts %}
-                <li class="post-item">
-                  <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-                  <p>- {{ post.date | date: "%B %d, %Y" }}</p>
-                </li>
+              <li class="post-item">
+                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                <p>- {{ post.date | date: "%B %d, %Y" }}</p>
+              </li>
               {% endfor %}
             </ul>
           </div>
@@ -68,9 +70,16 @@ permalink: /blog/
 
     <footer>
       <nametag>
-        All opinions expressed are my own and do not reflect the views of my employer or university.
+        All opinions expressed are my own and do not reflect the views of my
+        employer or university.
       </nametag>
-      <b><a href="https://github.com/Schizzle13/Schizzle13.github.io" target="_blank">Source Code</a></b>
+      <b
+        ><a
+          href="https://github.com/Schizzle13/Schizzle13.github.io"
+          target="_blank"
+          >Source Code</a
+        ></b
+      >
     </footer>
   </body>
 </html>

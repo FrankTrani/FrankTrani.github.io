@@ -3,20 +3,31 @@ layout: links.html
 title: Links
 permalink: /links/
 ---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frank Trani's Portfolio - Links</title>
-    <link rel="stylesheet" type="text/css" href="{{ '/scripts/styles.css' | relative_url }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ '/scripts/styles.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <script src="{{ '/scripts/script.js' | relative_url }}" defer></script>
   </head>
 
   <body>
     <header>
       <div class="nav-wrapper">
+        <div class="title-wrapper">
+          <h2 class="title2">Frank Trani</h2>
+        </div>
         <button class="switch-theme" id="switch-theme-btn"></button>
         <button class="hamburger" id="hamburger-btn">
           <i class="fas fa-bars"></i>
@@ -24,9 +35,11 @@ permalink: /links/
         <nav class="top-nav">
           <ul>
             <li><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a href="{{ '/links/' | relative_url }}" class="active">Links</a></li>
+            <li>
+              <a href="{{ '/links/' | relative_url }}" class="active">Links</a>
+            </li>
             <li><a href="{{ '/about-me/' | relative_url }}">About Me</a></li>
-            <li><a href="{{ '/blog/' | relative_url }}" >Blog</a></li>
+            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
           </ul>
         </nav>
 
@@ -35,7 +48,7 @@ permalink: /links/
             <li><a href="{{ '/' | relative_url }}">Home</a></li>
             <li><a href="{{ '/links/' | relative_url }}">Links</a></li>
             <li><a href="{{ '/about-me/' | relative_url }}">About Me</a></li>
-            <li><a href="{{ '/blog/' | relative_url }}" >Blog</a></li>
+            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
           </ul>
         </nav>
       </div>
@@ -46,50 +59,113 @@ permalink: /links/
         <h1>My Links</h1>
         <div class="links-grid">
           <div class="link-card">
-            <img src="{{ '/logos/github-mark.png' | relative_url }}" alt="GitHub" class="link-icon" />
+            <img
+              src="{{ '/logos/github-mark.png' | relative_url }}"
+              alt="GitHub"
+              class="link-icon"
+            />
             <h3>GitHub</h3>
-            <a href="https://github.com/FrankTrani" target="_blank" class="link-button">Visit</a>
+            <a
+              href="https://github.com/FrankTrani"
+              target="_blank"
+              class="link-button"
+              >Visit</a
+            >
           </div>
 
           <div class="link-card">
-            <img src="{{ '/logos/youtube-icon.png' | relative_url }}" alt="YouTube" class="link-icon" />
+            <img
+              src="{{ '/logos/youtube-icon.png' | relative_url }}"
+              alt="YouTube"
+              class="link-icon"
+            />
             <h3>YouTube</h3>
-            <a href="https://www.youtube.com/@FrankTrani" target="_blank" class="link-button">Visit</a>
+            <a
+              href="https://www.youtube.com/@FrankTrani"
+              target="_blank"
+              class="link-button"
+              >Visit</a
+            >
           </div>
 
           <div class="link-card">
-            <img src="{{ '/logos/LI-In-Bug.png' | relative_url }}" alt="LinkedIn" class="link-icon" />
+            <img
+              src="{{ '/logos/LI-In-Bug.png' | relative_url }}"
+              alt="LinkedIn"
+              class="link-icon"
+            />
             <h3>LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/frank-trani-a7ba35281" target="_blank" class="link-button">Visit</a>
+            <a
+              href="https://www.linkedin.com/in/frank-trani-a7ba35281"
+              target="_blank"
+              class="link-button"
+              >Visit</a
+            >
           </div>
 
           <!-- Resume Card -->
           <div class="link-card">
-            <img src="{{ '/logos/file.png' | relative_url }}" alt="Resume" class="link-icon" />
+            <img
+              src="{{ '/logos/file.png' | relative_url }}"
+              alt="Resume"
+              class="link-icon"
+            />
             <h3>Resume</h3>
-            <a href="{{ '/Resume - Google Docs.pdf' | relative_url }}" target="_blank" class="link-button">View</a>
+            <a
+              href="{{ '/Resume - Google Docs.pdf' | relative_url }}"
+              target="_blank"
+              class="link-button"
+              >View</a
+            >
           </div>
 
           <!-- LeetCode Card -->
           <div class="link-card">
-            <img src="{{ '/logos/leetcode.png' | relative_url }}" alt="LeetCode" class="link-icon" />
+            <img
+              src="{{ '/logos/leetcode.png' | relative_url }}"
+              alt="LeetCode"
+              class="link-icon"
+            />
             <h3>LeetCode</h3>
-            <a href="https://leetcode.com/u/Frank_Trani/" target="_blank" class="link-button">Visit</a>
+            <a
+              href="https://leetcode.com/u/Frank_Trani/"
+              target="_blank"
+              class="link-button"
+              >Visit</a
+            >
           </div>
 
           <!-- PicoCTF Card -->
           <div class="link-card">
-            <img src="{{ '/logos/picoCTF.svg' | relative_url }}" alt="PicoCTF" class="link-icon" />
+            <img
+              src="{{ '/logos/picoCTF.svg' | relative_url }}"
+              alt="PicoCTF"
+              class="link-icon"
+            />
             <h3>PicoCTF</h3>
-            <a href="https://play.picoctf.org/users/Schizzle13" target="_blank" class="link-button">Visit</a>
+            <a
+              href="https://play.picoctf.org/users/Schizzle13"
+              target="_blank"
+              class="link-button"
+              >Visit</a
+            >
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <nametag>All opinions expressed are my own and do not reflect the views of my employer or university.</nametag>
-      <b><a href="https://github.com/Schizzle13/Schizzle13.github.io" target="_blank">Source Code</a></b>
+      <nametag
+        >All opinions expressed are my own and do not reflect the views of my
+        employer or university.</nametag
+      >
+      <b
+        ><a
+          href="https://github.com/Schizzle13/Schizzle13.github.io"
+          target="_blank"
+          >Source Code</a
+        ></b
+      >
     </footer>
   </body>
 </html>
