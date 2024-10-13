@@ -16,15 +16,17 @@ In this post, we’ll explore the concept of **standard deviation** and how it c
 
 **Standard deviation** is a statistical measure that quantifies the amount of variation or dispersion in a set of values. It tells us how far individual data points are from the mean (average) of the dataset. The formula is:
 
-\[
+$$
 \sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i - \bar{x})^2}
-\]
+$$
 
 Where:
-- \( \sigma \) = Standard deviation
+
+- \( $$\sigma$$ \) = Standard deviation
 - \( N \) = Number of data points
-- \( x_i \) = Each individual data point
-- \( \bar{x} \) = Mean (average) of the data points
+- \( $$x_i$$ \) = Each data point
+- \( $$\bar{x}$$ \) = Mean (average) of the data points
+
 
 In finance, **standard deviation** is used to measure the **volatility** of a stock or portfolio. A higher standard deviation indicates more fluctuation in prices, while a lower standard deviation suggests stability.
 
