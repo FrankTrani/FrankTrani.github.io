@@ -500,17 +500,6 @@ button:hover {
   margin-right: 10px;
 }
 
-/* Footer */
-footer {
-  background-color: var(--bg-tint);
-  padding: 20px;
-  text-align: center;
-  margin-top: auto;
-  width: 100%;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
 /* Main container */
 main {
   flex: 1; /* Ensures the main content area takes up the available space */
@@ -724,3 +713,76 @@ b {
   }
 }
 
+/* Content Wrapper for Centering and Padding */
+.content-wrapper {
+  max-width: 800px;    /* Limit the width for readability */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Post Card Backpiece */
+.post-card {
+  background-color: var(--bg-tint);  /* Use tinted background */
+  padding: 40px;                     /* Add padding for spacing */
+  margin: 30px auto;                 /* Center and add space around */
+  border-radius: 15px;               /* Rounded corners */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  max-width: 900px;                  /* Ensure it doesn’t span too wide */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on the Post Card */
+.post-card:hover {
+  transform: translateY(-5px);       /* Slight upward lift on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Post Titles */
+.post h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--main-color);
+  text-align: center;
+}
+
+/* Paragraphs inside the Content */
+.post p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: var(--text-color-secondary);
+  line-height: 1.8;  /* Improve readability */
+}
+
+/* Content Area */
+/* Balanced whitespace handling for content */
+.content {
+  white-space: pre-line; /* Preserve necessary spaces but wrap nicely */
+  word-break: break-word;    /* Prevent overflow on long words or URLs */
+  line-height: 1.8;          /* Maintain readability */
+  margin-bottom: 20px;       /* Add space between paragraphs */
+  max-width: 800px;          /* Ensure text doesn’t stretch too wide */
+  margin: 0 auto;            /* Center the content */
+}
+
+
+/* Footer Styling */
+footer {
+  background-color: var(--bg-tint);
+  padding: 15px;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 10px;
+  }
+
+  .post h1 {
+    font-size: 2rem;
+  }
+}
