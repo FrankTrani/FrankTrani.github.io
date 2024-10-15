@@ -99,9 +99,8 @@ Despite these advancements, it’s essential to remember that the stock market i
 ## Resources for Further Reading
 
 - [Investopedia: Standard Deviation](https://www.investopedia.com/terms/s/standarddeviation.asp)
-- [How Machine Learning is Changing Finance](https://www.investopedia.com/terms/m/machine-learning-in-finance.asp)
 - [Bollinger Bands Explained](https://www.investopedia.com/terms/b/bollingerbands.asp)
 
 ---
 
-Thank you for reading! If you have any thoughts or questions about using standard deviation and machine learning for market predictions, feel free to leave a comment.
+Thank you for reading! If you have any thoughts or questions about using standard deviation and machine learning for market predictions, feel free to email me.

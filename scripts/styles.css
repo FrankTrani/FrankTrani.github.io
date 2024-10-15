@@ -132,6 +132,12 @@ header {
   color: #fff;
 }
 
+.active a {
+  font-weight: bold;
+  color: #f39c12; /* Example color */
+}
+
+
 /* Hamburger Menu Button */
 .hamburger {
   display: none;

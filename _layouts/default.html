@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frank Trani's Portfolio - Home</title>
 
-    <!-- Correct CSS Path with Cache Busting -->
     <link
       rel="stylesheet"
       href="{{ '/scripts/styles.css?v=1.0' | relative_url }}"
@@ -36,19 +35,39 @@
 
         <nav class="top-nav">
           <ul>
-            <li><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a href="{{ '/links/' | relative_url }}">Links</a></li>
-            <li><a href="{{ '/about-me/' | relative_url }}">About Me</a></li>
-            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+            <li class="{% if page.url == '/' %}active{% endif %}">
+              <a href="{{ '/' | relative_url }}">Home</a>
+            </li>
+            <li class="{% if page.url == '/links/' %}active{% endif %}">
+              <a href="{{ '/links/' | relative_url }}">Links</a>
+            </li>
+            <li class="{% if page.url == '/about-me/' %}active{% endif %}">
+              <a href="{{ '/about-me/' | relative_url }}">About Me</a>
+            </li>
+            <li
+              class="{% if page.url == '/blog/' or page.url contains '/blog/' %}active{% endif %}"
+            >
+              <a href="{{ '/blog/' | relative_url }}">Blog</a>
+            </li>
           </ul>
         </nav>
 
         <nav class="fullscreen-nav" id="fullscreen-nav">
           <ul>
-            <li><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a href="{{ '/links/' | relative_url }}">Links</a></li>
-            <li><a href="{{ '/about-me/' | relative_url }}">About Me</a></li>
-            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+            <li class="{% if page.url == '/' %}active{% endif %}">
+              <a href="{{ '/' | relative_url }}">Home</a>
+            </li>
+            <li class="{% if page.url == '/links/' %}active{% endif %}">
+              <a href="{{ '/links/' | relative_url }}">Links</a>
+            </li>
+            <li class="{% if page.url == '/about-me/' %}active{% endif %}">
+              <a href="{{ '/about-me/' | relative_url }}">About Me</a>
+            </li>
+            <li
+              class="{% if page.url == '/blog/' or page.url contains '/blog/' %}active{% endif %}"
+            >
+              <a href="{{ '/blog/' | relative_url }}">Blog</a>
+            </li>
           </ul>
         </nav>
       </div>
