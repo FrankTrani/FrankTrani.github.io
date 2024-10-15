@@ -2,8 +2,7 @@
 layout: post
 title: "Using Standard Deviation to Predict the Stock Market"
 date: 2024-10-12
-categories: finance statistics machine-learning
-tags: [finance, stock-market, statistics, standard-deviation, machine-learning]
+categories: finance statistics machine-learning 
 ---
 
 

@@ -66,5 +66,26 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('search-input');
+  const posts = document.querySelectorAll('.post-name');
+
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+
+    posts.forEach(post => {
+      const title = post.getAttribute('data-title');
+      const tags = post.getAttribute('data-tags');
+
+      if (title.includes(query) || tags.includes(query)) {
+        post.style.display = 'block';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  });
+});
+
+
 
 

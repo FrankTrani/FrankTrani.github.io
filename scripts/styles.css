@@ -137,7 +137,6 @@ header {
   color: #f39c12; /* Example color */
 }
 
-
 /* Hamburger Menu Button */
 .hamburger {
   display: none;
@@ -574,40 +573,6 @@ b {
   color: white;
 }
 
-/* Blog Posts Grid */
-.posts-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Add spacing between posts */
-  margin-top: 30px;
-}
-
-/* Individual Post Item */
-.post-item {
-  background-color: var(--boxes); /* Use a tinted background */
-  padding: 20px;
-  border-radius: 12px;
-  /* box-shadow: 0 8px 15px #1a8543; */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bp {
-  text-align: center;
-  padding: 5px;
-  border-radius: 3px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.post-item h3 {
-  margin-bottom: 8px;
-  padding: 3px;
-  color: var(--main-color);
-}
-
-.post-item p {
-  color: var(--text-color-secondary);
-  margin-top: 5px;
-}
-
 .post-card h3 a {
   text-decoration: none;
   color: var(--main-color);
@@ -820,3 +785,98 @@ b {
   align-items: center;
   height: 100vh;
 }
+
+/* Blog section */
+.blog-posts {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bp {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--main-color);
+}
+
+/* Post card wrapper */
+.post-name-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Individual post card */
+.post-name {
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-name:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Post title styling */
+.post-title a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.post-title a:hover {
+  color: var(--shadow);
+}
+
+.post-tags {
+  color: #ddd;
+
+}
+/* Post date and excerpt */
+.post-date {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.post-excerpt {
+  font-size: 1rem;
+  color: #ddd;
+  margin: 1rem 0;
+}
+
+/* Read more link */
+.read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--main-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.read-more:hover {
+  border-color: var(--shadow);
+}
+
+/* Search Bar Styles */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+#search-input {
+  width: 80%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
