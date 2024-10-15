@@ -1,5 +1,15 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
+# Ignore build directories
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata/
+
+# Ignore dependencies
+node_modules/
+vendor/
+Gemfile.lock
+
+# Ignore OS and editor-specific files
+.DS_Store
+Thumbs.db
+*.swp
