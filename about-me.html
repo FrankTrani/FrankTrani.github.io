@@ -1,115 +1,41 @@
 ---
-layout: about-me.html
+layout: default
 title: About Me
 permalink: /about-me/
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frank Trani's Portfolio</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ '/scripts/styles.css' | relative_url }}"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <script src="{{ '/scripts/script.js' | relative_url }}" defer></script>
-  </head>
+<section class="about-me">
+  <h1>About Me</h1>
 
-  <body>
-    <header>
-      <div class="nav-wrapper">
-        <div class="title-wrapper">
-          <h2 class="title2">Frank Trani</h2>
-        </div>
-        <button class="switch-theme" id="switch-theme-btn"></button>
+  <div class="about-me-content">
+    <section class="intro">
+      <h2>Hi, I'm Frank Trani</h2>
+      <p>
+        I'm an <span id="age"></span>-year-old passionate about programming with
+        over <span id="yearsProgramming"></span> years of experience. I love
+        exploring artificial intelligence, robotics, backend development, and
+        cybersecurity. My journey in tech has been fueled by curiosity and a
+        constant desire to learn.
+      </p>
+    </section>
 
-        <button class="hamburger" id="hamburger-btn">
-          <i class="fas fa-bars"></i>
-        </button>
+    <section class="interests">
+      <h2><i class="fas fa-lightbulb"></i> My Interests</h2>
+      <p>
+        I’m deeply interested in the evolving world of technology, particularly
+        in AI, robotics, and cybersecurity. I'm always excited about how these
+        fields are shaping the future and impacting our daily lives.
+      </p>
+    </section>
 
-        <nav class="top-nav">
-          <ul>
-            <li><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a href="{{ '/links/' | relative_url }}">Links</a></li>
-            <li>
-              <a href="{{ '/about-me/' | relative_url }}" class="active"
-                >About Me</a
-              >
-            </li>
-            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          </ul>
-        </nav>
-
-        <!-- Full-screen navigation for mobile -->
-        <nav class="fullscreen-nav" id="fullscreen-nav">
-          <ul>
-            <li><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a href="{{ '/links/' | relative_url }}">Links</a></li>
-            <li><a href="{{ '/about-me/' | relative_url }}">About Me</a></li>
-            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main class="container">
-      <section class="about-me">
-        <h1>About Me</h1>
-
-        <div class="about-me-content">
-          <section class="intro">
-            <h2>Hi, I'm Frank Trani</h2>
-            <p>
-              I'm an <span id="age"></span>-year-old passionate about
-              programming with over <span id="yearsProgramming"></span> years of
-              experience. I love exploring artificial intelligence, robotics,
-              backend development, and cybersecurity. My journey in tech has
-              been fueled by curiosity and a constant desire to learn.
-            </p>
-          </section>
-
-          <section class="interests">
-            <h2><i class="fas fa-lightbulb"></i> My Interests</h2>
-            <p>
-              I’m deeply interested in the evolving world of technology,
-              particularly in AI, robotics, and cybersecurity. I'm always
-              excited about how these fields are shaping the future and
-              impacting our daily lives.
-            </p>
-          </section>
-
-          <section class="goals">
-            <h2><i class="fas fa-bullseye"></i> My Goals</h2>
-            <p>
-              One of my major goals is to continue developing my skills as a
-              backend developer and to contribute to impactful projects. I aim
-              to combine my knowledge of AI and cybersecurity to create
-              innovative solutions for real-world challenges.
-            </p>
-          </section>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <nametag
-        >All opinions expressed are my own and do not reflect the views of my
-        employer or university.</nametag
-      >
-
-      <b
-        ><a
-          href="https://github.com/Schizzle13/Schizzle13.github.io"
-          target="_blank"
-          >Source Code</a
-        ></b
-      >
-    </footer>
-  </body>
-</html>
+    <section class="goals">
+      <h2><i class="fas fa-bullseye"></i> My Goals</h2>
+      <p>
+        One of my major goals is to continue developing my skills as a backend
+        developer and to contribute to impactful projects. I aim to combine my
+        knowledge of AI and cybersecurity to create innovative solutions for
+        real-world challenges.
+      </p>
+    </section>
+  </div>
+</section>

@@ -1,167 +1,98 @@
 ---
-layout: index.html
+layout: default
 title: Home
 permalink: /
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frank Trani's Portfolio - Home</title>
-    <link rel="stylesheet" href="scripts/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <script src="scripts/script.js"></script>
-  </head>
+<section class="intro">
+  <h1 class="title">Hi, I'm Frank Trani</h1>
+  <h2 class="subtitle">
+    A backend developer passionate about coding and technology.
+  </h2>
+  <p class="tagline">
+    I am <span id="age"></span> years old and have been passionate about
+    programming for <span id="yearsProgramming"></span> years. I enjoy learning
+    about AI, robotics, backend development, and cybersecurity. Welcome to my
+    website!
+  </p>
+</section>
 
-  <body>
-    <header>
-      <div class="nav-wrapper">
-        <div class="title-wrapper">
-          <h2 class="title2">Frank Trani</h2>
-        </div>
-        <button class="switch-theme" id="switch-theme-btn"></button>
+<section class="contact">
+  <a href="mailto:franktrani7887@gmail.com" class="contact-link">
+    <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+    <p>You can reach me via email: <span>franktrani7887@gmail.com</span></p>
+  </a>
+</section>
 
-        <button class="hamburger" id="hamburger-btn">
-          <i class="fas fa-bars"></i>
-        </button>
+<section class="tech-stack">
+  <h2>My Tech Stack</h2>
 
-        <nav class="top-nav">
-          <ul>
-            <li><a href="{{ '/' | relative_url }}" class="active">Home</a></li>
-            <li><a href="{{ '/links/' | relative_url }}">Links</a></li>
-            <li><a href="{{ '/about-me/' | relative_url }}">About Me</a></li>
-            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          </ul>
-        </nav>
+  <div class="tech-container">
+    <div class="tech-category">
+      <h3>Languages</h3>
+      <ul>
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>C</li>
+      </ul>
+    </div>
 
-        <nav class="fullscreen-nav" id="fullscreen-nav">
-          <ul>
-            <li><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a href="{{ '/links/' | relative_url }}">Links</a></li>
-            <li><a href="{{ '/about-me/' | relative_url }}">About Me</a></li>
-            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div class="tech-category">
+      <h3>Databases</h3>
+      <ul>
+        <li>MySQL</li>
+        <li>MongoDB</li>
+        <li>PostgreSQL</li>
+      </ul>
+    </div>
 
-    <main class="container">
-      <section class="intro">
-        <h1 class="title">Hi, I'm Frank Trani</h1>
-        <h2 class="subtitle">
-          A backend developer passionate about coding and technology.
-        </h2>
-        <p class="tagline">
-          I am <span id="age"></span> years old and have been passionate about
-          programming for <span id="yearsProgramming"></span> years. I enjoy
-          learning about AI, robotics, backend development, and cybersecurity.
-          Welcome to my website!
-        </p>
-      </section>
+    <div class="tech-category">
+      <h3>Frameworks</h3>
+      <ul>
+        <li>Flask</li>
+        <li>Node JS</li>
+        <li>PyTorch</li>
+        <li>Tensor Flow</li>
+      </ul>
+    </div>
 
-      <section class="contact">
-        <a href="mailto:franktrani7887@gmail.com" class="contact-link">
-          <h2><i class="fas fa-envelope"></i> Contact Me</h2>
-          <p>
-            You can reach me via email: <span>franktrani7887@gmail.com</span>
-          </p>
-        </a>
-      </section>
+    <div class="tech-category">
+      <h3>Tools</h3>
+      <ul>
+        <li>Linux</li>
+        <li>Vim</li>
+        <li>Git</li>
+        <li>VS Code</li>
+        <li>Docker</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-      <section class="tech-stack">
-        <h2>My Tech Stack</h2>
-
-        <div class="tech-container">
-          <div class="tech-category">
-            <h3>Languages</h3>
-            <ul>
-              <li>Python</li>
-              <li>JavaScript</li>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>C</li>
-            </ul>
-          </div>
-
-          <div class="tech-category">
-            <h3>Databases</h3>
-            <ul>
-              <li>MySQL</li>
-              <li>MongoDB</li>
-              <li>PostgreSQL</li>
-            </ul>
-          </div>
-
-          <div class="tech-category">
-            <h3>Frameworks</h3>
-            <ul>
-              <li>Flask</li>
-              <li>Node JS</li>
-              <li>PyTorch</li>
-              <li>Tensor Flow</li>
-            </ul>
-          </div>
-
-          <div class="tech-category">
-            <h3>Tools</h3>
-            <ul>
-              <li>Linux</li>
-              <li>Vim</li>
-              <li>Git</li>
-              <li>VS Code</li>
-              <li>Docker</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="projects">
-        <h2>My Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>AutoTyper</h3>
-            <p>
-              Automates repetitive typing tasks with customizable
-              configurations.
-            </p>
-            <a
-              href="https://github.com/FrankTrani/AutoTyper"
-              target="_blank"
-              class="project-link"
-              >View on GitHub</a
-            >
-          </div>
-          <div class="project-card">
-            <h3>C Projects</h3>
-            <p>Various projects made in C</p>
-            <a
-              href="https://github.com/FrankTrani/C-Projects"
-              target="_blank"
-              class="project-link"
-              >View on GitHub</a
-            >
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <nametag
-        >All opinions expressed are my own and do not reflect the views of my
-        employer or university.</nametag
+<section class="projects">
+  <h2>My Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>AutoTyper</h3>
+      <p>Automates repetitive typing tasks with customizable configurations.</p>
+      <a
+        href="https://github.com/FrankTrani/AutoTyper"
+        target="_blank"
+        class="project-link"
+        >View on GitHub</a
       >
-      <b
-        ><a
-          href="https://github.com/Schizzle13/Schizzle13.github.io"
-          target="_blank"
-          >Source Code</a
-        ></b
+    </div>
+    <div class="project-card">
+      <h3>C Projects</h3>
+      <p>Various projects made in C</p>
+      <a
+        href="https://github.com/FrankTrani/C-Projects"
+        target="_blank"
+        class="project-link"
+        >View on GitHub</a
       >
-    </footer>
-  </body>
-</html>
+    </div>
+  </div>
+</section>

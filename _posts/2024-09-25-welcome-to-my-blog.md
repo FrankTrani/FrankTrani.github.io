@@ -3,7 +3,6 @@ layout: post
 title: "Welcome to My Blog!"
 ---
 
-# Welcome to My Blog!
 
 Hi, I'm Frank Trani, and welcome to my personal blog! I'm excited to have you here as I embark on this new journey of sharing my thoughts, experiences, and insights with you.
 
