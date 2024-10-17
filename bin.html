@@ -1,0 +1,177 @@
+---
+layout: default
+title: binary
+permalink: /binary
+---
+
+<head>
+  <script>
+    function copyToClipboard(inputId) {
+      const input = document.getElementById(inputId);
+      input.select();
+      input.setSelectionRange(0, 99999); // For mobile devices
+      document.execCommand("copy");
+      alert("Copied: " + input.value);
+    }
+
+    // Convert from Binary
+    function convertFromBinary() {
+      const binary = document.getElementById("binary").value;
+      if (binary !== "" && /^[01]+$/.test(binary)) {
+        const decimal = parseInt(binary, 2);
+        document.getElementById("decimal").value = decimal;
+        document.getElementById("hexadecimal").value = decimal
+          .toString(16)
+          .toUpperCase();
+        document.getElementById("text").value = binaryToText(binary);
+        document.getElementById("base64").value = btoa(binaryToText(binary));
+      } else {
+        clearFields();
+      }
+    }
+
+    // Convert from Decimal
+    function convertFromDecimal() {
+      const decimal = document.getElementById("decimal").value;
+      if (decimal !== "" && !isNaN(decimal)) {
+        const binary = parseInt(decimal, 10).toString(2);
+        document.getElementById("binary").value = binary;
+        document.getElementById("hexadecimal").value = parseInt(decimal, 10)
+          .toString(16)
+          .toUpperCase();
+        document.getElementById("text").value = binaryToText(binary);
+        document.getElementById("base64").value = btoa(binaryToText(binary));
+      } else {
+        clearFields();
+      }
+    }
+
+    // Convert from Hexadecimal
+    function convertFromHexadecimal() {
+      const hex = document.getElementById("hexadecimal").value;
+      if (hex !== "" && /^[0-9a-fA-F]+$/.test(hex)) {
+        const decimal = parseInt(hex, 16);
+        document.getElementById("decimal").value = decimal;
+        const binary = decimal.toString(2);
+        document.getElementById("binary").value = binary;
+        document.getElementById("text").value = binaryToText(binary);
+        document.getElementById("base64").value = btoa(binaryToText(binary));
+      } else {
+        clearFields();
+      }
+    }
+
+    // Convert from Text
+    function convertFromText() {
+      const text = document.getElementById("text").value;
+      const binary = textToBinary(text);
+      document.getElementById("binary").value = binary;
+      convertFromBinary();
+    }
+
+    // Convert from Base64
+    function convertFromBase64() {
+      const base64 = document.getElementById("base64").value;
+      try {
+        const decodedText = atob(base64);
+        document.getElementById("text").value = decodedText;
+        convertFromText();
+      } catch (e) {
+        clearFields();
+      }
+    }
+
+    // Convert binary to text
+    function binaryToText(binary) {
+      const bytes = binary.match(/.{1,8}/g);
+      return bytes
+        ? String.fromCharCode(...bytes.map((b) => parseInt(b, 2)))
+        : "";
+    }
+
+    // Convert text to binary
+    function textToBinary(text) {
+      return text
+        .split("")
+        .map((char) => char.charCodeAt(0).toString(2).padStart(8, "0"))
+        .join("");
+    }
+
+    // Clear the other input fields if invalid input
+    function clearFields() {
+      document.getElementById("decimal").value = "";
+      document.getElementById("binary").value = "";
+      document.getElementById("hexadecimal").value = "";
+      document.getElementById("text").value = "";
+      document.getElementById("base64").value = "";
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Number and Text Converter</h1>
+
+    <div class="converter">
+      <!-- Input for Binary -->
+      <div class="input-group">
+        <label for="binary">Binary</label>
+        <input
+          type="text"
+          id="binary"
+          placeholder="Enter Binary"
+          oninput="convertFromBinary()"
+        />
+        <button onclick="copyToClipboard('binary')">Copy</button>
+      </div>
+
+      <!-- Input for Decimal -->
+      <div class="input-group">
+        <label for="decimal">Decimal</label>
+        <input
+          type="text"
+          id="decimal"
+          placeholder="Enter Decimal"
+          oninput="convertFromDecimal()"
+        />
+        <button onclick="copyToClipboard('decimal')">Copy</button>
+      </div>
+
+      <!-- Input for Hexadecimal -->
+      <div class="input-group">
+        <label for="hexadecimal">Hexadecimal</label>
+        <input
+          type="text"
+          id="hexadecimal"
+          placeholder="Enter Hexadecimal"
+          oninput="convertFromHexadecimal()"
+        />
+        <button onclick="copyToClipboard('hexadecimal')">Copy</button>
+      </div>
+
+      <!-- Input for Text -->
+      <div class="input-group">
+        <label for="text">Text</label>
+        <input
+          type="text"
+          id="text"
+          placeholder="Enter Text (A)"
+          oninput="convertFromText()"
+        />
+        <button onclick="copyToClipboard('text')">Copy</button>
+      </div>
+
+      <!-- Input for Base64 -->
+      <div class="input-group">
+        <label for="base64">Base64</label>
+        <input
+          type="text"
+          id="base64"
+          placeholder="Enter Base64"
+          oninput="convertFromBase64()"
+        />
+        <button onclick="copyToClipboard('base64')">Copy</button>
+      </div>
+    </div>
+  </div>
+  `
+</body>
