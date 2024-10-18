@@ -18,6 +18,8 @@
       src="{{ '/scripts/script.js?v=1.0' | relative_url }}"
       defer
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   </head>
 
   <body>
@@ -48,6 +50,9 @@
               class="{% if page.url == '/blog/' or page.url contains '/blog/' %}active{% endif %}"
             >
               <a href="{{ '/blog/' | relative_url }}">Blog</a>
+            </li>
+            <li class="{% if page.url == '/tools/' %}active{% endif %}">
+              <a href="{{ '/tools/' | relative_url }}">Tools</a>
             </li>
           </ul>
         </nav>

@@ -1,11 +1,45 @@
 ---
 layout: default
-title: 404
-permalink: /404/
+title: 404 - Page Not Found
+permalink: /404.html
 ---
 
-
-<div class="home-button-container">
-    <h1 class="why">How did you end up here?</h1>
-    <a href="{{ '/' | relative_url }}" class="home-button">Go Home</a>
+<section class="error-page">
+  <div class="container">
+    <div class="illustration">🚀</div>
+    <h1>404</h1>
+    <p>Oops! The page you're looking for doesn't exist.</p>
+    <a class="home-button" href="{{ '/' | relative_url }}">Take Me Home</a>
   </div>
+</section>
+
+<style>
+  .illustration {
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 20px;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  h1 {
+    font-size: 7rem;
+    margin: 0;
+    color: var(--main-color);
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: var(--text-color-secondary);
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+</style>
