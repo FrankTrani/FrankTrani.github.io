@@ -212,6 +212,10 @@ header {
     display: none; /* Hide top nav on small screens */
   }
 
+  .title2 {
+    display: none;
+  }
+
   .hamburger {
     display: block; /* Show hamburger button */
   }
@@ -220,10 +224,6 @@ header {
     position: absolute;
     left: 1.25rem; /* 20px */
     top: 1.25rem; /* 20px */
-  }
-
-  .title2 {
-    display: none;
   }
 }
 
