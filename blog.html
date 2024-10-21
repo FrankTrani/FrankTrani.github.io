@@ -28,10 +28,11 @@ permalink: /blog/
       </h2>
       <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
 
-      <!-- Tags Section -->
       <div class="post-tags">
         tags: {% for tag in post.categories %}
-        <span class="tag"> {{ tag }},</span>
+        <span class="tag"
+          >{{ tag }}{% unless forloop.last %},{% endunless %}</span
+        >
         {% endfor %}
       </div>
 
