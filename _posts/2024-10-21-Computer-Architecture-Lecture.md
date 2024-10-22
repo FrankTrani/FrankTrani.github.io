@@ -192,9 +192,7 @@ The **XOR gate** produces an output of 1 if its inputs are different. If both in
 |---|---|-------------|
 | 0 | 0 | 0           |
 | 0 | 1 | 1           |
-| 1 | 0 |
-
- 1           |
+| 1 | 0 | 1           |
 | 1 | 1 | 0           |
 
 ---

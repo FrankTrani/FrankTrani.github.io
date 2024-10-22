@@ -770,10 +770,6 @@ b {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.post-card:hover {
-  transform: translateY(-0.25rem);
-  box-shadow: 0 0.75rem 1.5rem var(--shadow-color);
-}
 
 /* Post Titles */
 .post h1 {
