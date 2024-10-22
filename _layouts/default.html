@@ -90,11 +90,13 @@
             >
               <a href="{{ '/blog/' | relative_url }}">Blog</a>
             </li>
+            <li class="{% if page.url == '/tools/' %}active{% endif %}">
+              <a href="{{ '/tools/' | relative_url }}">Tools</a>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-
     <main class="container">{{ content }}</main>
 
     <footer>

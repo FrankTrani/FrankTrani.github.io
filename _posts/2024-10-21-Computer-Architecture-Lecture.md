@@ -46,10 +46,12 @@ In **sign-magnitude representation**, the leftmost bit (most significant bit) re
 - **1** in the leftmost bit indicates a negative number.
 
 For example, in an 8-bit system:
+
 - **+5** would be represented as `00000101`
 - **-5** would be represented as `10000101`
 
 While this method is intuitive, it has two major problems:
+
 1. **Two Representations of Zero**: There is a **positive zero** (`00000000`) and a **negative zero** (`10000000`), which creates ambiguity.
 2. **Complex Arithmetic**: Performing arithmetic with sign-magnitude numbers is inefficient because the sign bit has to be handled separately from the magnitude, complicating hardware design.
 
@@ -65,6 +67,7 @@ To address these issues, two better methods were developed: **1's complement** a
 - Then, invert all the bits: `11111010` (this is -5 in 1's complement).
 
 ### Properties of 1's Complement:
+
 - **Inversion**: Negative numbers are formed by flipping the bits of the positive number.
 - **Two Representations of Zero**: Like sign-magnitude, 1’s complement has two representations of zero:
   - Positive zero: `00000000`
@@ -75,6 +78,7 @@ To address these issues, two better methods were developed: **1's complement** a
 1’s complement arithmetic has some complications when it comes to addition. If the result of adding two numbers produces an overflow (a carry out of the leftmost bit), you must **add the overflow bit back** to the result.
 
 Example:
+
 ```
   0011  (3 in decimal)
 + 1100  (-3 in decimal, 1's complement form)
@@ -83,6 +87,7 @@ Example:
 ```
 
 ### Limitations of 1's Complement:
+
 - **Ambiguous Zero**: Having both positive and negative zeros creates ambiguity.
 - **Complex Arithmetic**: The need to handle carry-over bits in addition makes the hardware implementation of arithmetic more complex.
 
@@ -95,11 +100,14 @@ Because of these limitations, 1’s complement was largely replaced by **2’s c
 **2’s complement** is the most widely used method for representing signed integers in modern computers. It solves the problems of sign-magnitude and 1’s complement by offering a more efficient and unambiguous way to represent negative numbers.
 
 ### How 2's Complement Works:
+
 To find the 2’s complement of a number:
+
 1. **Invert all the bits** (same as 1's complement).
 2. **Add 1** to the result.
 
 For example, to represent **-5** in 2’s complement:
+
 1. Start with the binary representation of **+5**: `00000101`
 2. Invert the bits: `11111010` (this is the 1's complement of 5)
 3. Add 1 to the result: `11111011`
@@ -109,7 +117,7 @@ So, **-5** in 2’s complement is `11111011`.
 ### Advantages of 2’s Complement:
 
 1. **Single Representation of Zero**: Unlike 1’s complement, 2’s complement has only one representation of zero (`00000000`), which simplifies arithmetic.
-   
+
 2. **Simple Arithmetic**: Adding and subtracting numbers in 2’s complement is simpler and faster for computers. There’s no need to handle carry bits separately, as the overflow is discarded naturally in binary addition.
 
 3. **Automatic Negation**: Taking the 2’s complement of a number automatically gives you its negative counterpart, making negation straightforward.
@@ -184,7 +192,7 @@ The **OR gate** produces an output of 1 if at least one of its inputs is 1. If b
 
 ### 4. XOR Gate (Exclusive OR)
 
-The **XOR gate** produces an output of 1 if its inputs are different. If both inputs are the same, the output is 0. 
+The **XOR gate** produces an output of 1 if its inputs are different. If both inputs are the same, the output is 0.
 
 #### Truth Table:
 
@@ -272,7 +280,7 @@ A **D latch** is a modified SR latch with only one input, called **D (Data)**, a
 
 | C (Clock) | D (Data) | Q (Output) | $\neg Q$ (Inverted Output) |
 |-----------|----------|------------|----------------------------|
-| 0         | X        | Q (previous) | $\neg Q$ (previous)        |
+| 0         | X        | Q (previous) | $\neg Q$ (previous)      |
 | 1         | 0        | 0          | 1                          |
 | 1         | 1        | 1          | 0                          |
 
@@ -305,11 +313,13 @@ In contrast, the **Harvard architecture** separates memory for data and instruct
 ### 3. RISC vs. CISC Architectures
 
 #### RISC (Reduced Instruction Set Computer)
+
 - **Simple instructions** that execute in a single clock cycle.
 - **Fewer instructions**, but optimized for performance.
 - Commonly used in modern processors like ARM, which is widely used in mobile devices and embedded systems.
 
 #### CISC (Complex Instruction Set Computer)
+
 - **More complex instructions** that may take multiple clock cycles to execute.
 - **More powerful instructions**, designed to perform complex operations in fewer lines of assembly code.
 - **Intel x86** processors are an example of CISC architecture, used in most desktop and laptop computers.
@@ -388,4 +398,5 @@ The architecture of computers can vary significantly depending on the type of ma
 ## Summary
 
 In this post, we covered the foundation of modern computing, including the use of binary numbers, logic gates, and memory elements. We explored how negative numbers are represented using 1’s complement and 2’s complement, and why 2’s complement is the standard in modern systems. We also delved into the architecture of different machines, ranging from personal computers to supercomputers. Understanding these foundational concepts is essential for understanding how computers work at the most basic level, and how these principles are applied in modern computer systems.
+
 
