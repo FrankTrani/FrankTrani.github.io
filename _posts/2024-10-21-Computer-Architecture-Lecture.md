@@ -79,12 +79,12 @@ To address these issues, two better methods were developed: **1's complement** a
 
 Example:
 
-```
+
   0011  (3 in decimal)
 + 1100  (-3 in decimal, 1's complement form)
 --------
   1111  (0 in decimal, after adding overflow bit)
-```
+
 
 ### Limitations of 1's Complement:
 

@@ -1,13 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Global Text Overflow Handling */
 body,
 p,
 h1,
@@ -19,31 +17,42 @@ h6,
 blockquote,
 pre,
 table {
-  word-wrap: break-word; /* Ensure long words break onto the next line */
-  overflow-wrap: break-word; /* Break long words to prevent overflow */
-  hyphens: auto; /* Hyphenate long words */
+  word-wrap: normal;
+  overflow-wrap: normal; 
+  hyphens: auto; 
 }
 
-/* Theme Variables */
-/* Dark theme */
+pre,
+code {
+  white-space: pre-wrap; 
+  word-wrap: normal; 
+  overflow-x: auto; 
+}
+
+a,
+p,
+blockquote,
+code {
+  word-break: normal; 
+  white-space: normal; 
+}
+
 :root {
-  --main-color: #0072e4; /* Dodger Blue */
+  --main-color: #0072e4; 
   --bg-color: #0d0f13;
   --bg-tint: #1b1e2a;
-  --text-color: #ecf0f1; /* Light Gray */
-  --text-color-secondary: #bdc3c7; /* Slightly Darker Gray */
-  --shadow-color: rgba(0, 0, 0, 0.1); /* Light Shadow */
-  --boxes: #0b263b; /* Slightly Different Shade */
+  --text-color: #ecf0f1; 
+  --text-color-secondary: #bdc3c7; 
+  --shadow-color: rgba(0, 0, 0, 0.1); 
+  --boxes: #0b263b; 
 }
 
-/* Light theme */
 :root[data-theme="light"] {
   --bg-color: #bdf0f8;
   --bg-tint: #e6fbff;
-  --text-color: #2c3e50; /* Dark Blue-Gray */
-  --text-color-secondary: #34495e; /* Slightly Lighter */
-  --shadow-color: rgba(0, 0, 0, 0.1); /* Light Shadow */
-  --boxes: #92e0ff; /* White */
+  --text-color: #2c3e50; 
+  --text-color-secondary: #34495e; 
+  --boxes: #92e0ff; 
 }
 
 a {
@@ -56,7 +65,6 @@ a:hover {
   color: var(--text-color-secondary);
 }
 
-/* Global Styles */
 html,
 body {
   height: 100%;
@@ -68,15 +76,13 @@ body {
   line-height: 1.6;
 }
 
-/* Container */
 .container {
   width: 100%;
-  max-width: 75rem; /* 1200px */
-  margin: 0rem auto 6.25rem auto; /* 3rem top, 100px bottom */
-  padding: 1.5rem; /* 40px */
+  max-width: 75rem; 
+  margin: 0rem auto 6.25rem auto; 
+  padding: 1.5rem; 
 }
 
-/* Binary and Tools Containers */
 .tools-container,
 .bin-container {
   text-align: center;
@@ -86,7 +92,6 @@ body {
   box-shadow: 0 0.5rem 1rem var(--shadow-color);
 }
 
-/* Navigation Bar Styling */
 header {
   background-color: var(--bg-tint);
   position: sticky;
@@ -96,17 +101,15 @@ header {
   padding: 0.625rem 0;
 }
 
-/* Navigation Wrapper */
 .nav-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1.25rem;
-  max-width: 75rem; /* 1200px */
+  max-width: 75rem; 
   margin: 0 auto;
 }
 
-/* Title Section */
 .title-wrapper {
   flex: 1;
   text-align: left;
@@ -119,7 +122,6 @@ header {
   margin: 0;
 }
 
-/* Switch Theme Button */
 .switch-theme {
   background-color: transparent;
   border: none;
@@ -138,7 +140,6 @@ header {
   color: var(--main-color);
 }
 
-/* Top Navigation */
 .top-nav {
   display: flex;
   align-items: center;
@@ -164,7 +165,6 @@ header {
   color: #fff;
 }
 
-/* Hamburger Menu */
 .hamburger {
   display: none;
   background: none;
@@ -174,7 +174,6 @@ header {
   cursor: pointer;
 }
 
-/* Full-Screen Menu for Small Screens */
 .fullscreen-nav {
   display: none;
   position: fixed;
@@ -217,25 +216,6 @@ header {
   color: var(--text-color-secondary);
 }
 
-@media (max-width: 48rem) {
-  /* 768px */
-  .top-nav {
-    display: none;
-  }
-  .hamburger {
-    display: block;
-  }
-  .switch-theme {
-    position: absolute;
-    left: 1.25rem;
-    top: 1.25rem;
-  }
-  .title2 {
-    display: none;
-  }
-}
-
-/* Introduction Section */
 .intro {
   text-align: center;
   margin: 5rem 0 3rem 0;
@@ -257,13 +237,12 @@ header {
 
 .intro .tagline {
   font-size: 1rem;
-  max-width: 40rem; /* 640px */
+  max-width: 40rem; 
   margin: 0 auto;
   line-height: 1.6;
   color: var(--text-color-secondary);
 }
 
-/* General Titles */
 .title {
   font-size: 2rem;
   font-weight: 600;
@@ -277,7 +256,6 @@ header {
   margin-bottom: 1.5rem;
 }
 
-/* Buttons */
 button {
   font-size: 1rem;
   font-weight: 500;
@@ -291,10 +269,9 @@ button {
 }
 
 button:hover {
-  background-color: #1c86ee; /* Slightly darker blue */
+  background-color: #1c86ee; 
 }
 
-/* Projects Section */
 .projects {
   padding: 2rem 1rem;
   background-color: var(--bg-tint);
@@ -311,14 +288,12 @@ button:hover {
   color: var(--main-color);
 }
 
-/* Projects Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 1rem;
 }
 
-/* Project Card */
 .project-card {
   background-color: var(--boxes);
   padding: 1rem;
@@ -356,13 +331,11 @@ button:hover {
   text-decoration: underline;
 }
 
-/* Project Card Hover Effect */
 .project-card:hover {
   transform: translateY(-0.25rem);
   box-shadow: 0 0.5rem 1rem var(--shadow-color);
 }
 
-/* Tech Stack Section */
 .tech-stack {
   padding: 2rem 1rem;
   background-color: var(--bg-tint);
@@ -378,7 +351,6 @@ button:hover {
   color: var(--main-color);
 }
 
-/* Tech Container */
 .tech-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -408,14 +380,6 @@ button:hover {
   color: var(--text-color-secondary);
 }
 
-@media (max-width: 48rem) {
-  /* 768px */
-  .tech-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Links Page */
 .links {
   margin-top: 3rem;
   text-align: center;
@@ -428,7 +392,6 @@ button:hover {
   color: var(--main-color);
 }
 
-/* Link Cards */
 .link-card {
   display: inline-block;
   background-color: var(--bg-tint);
@@ -470,7 +433,6 @@ button:hover {
   font-weight: 500;
 }
 
-/* About Me Section */
 .about-me {
   padding: 2rem 1rem;
   background-color: var(--bg-tint);
@@ -505,12 +467,10 @@ button:hover {
   margin-bottom: 1rem;
 }
 
-/* Icons */
 .about-me-content h2 i {
   margin-right: 0.5rem;
 }
 
-/* 404 Page */
 .error-page {
   text-align: center;
   padding: 5rem 1rem;
@@ -544,7 +504,6 @@ button:hover {
   background-color: #1c86ee;
 }
 
-/* Binary Converter Page */
 .converter {
   display: flex;
   flex-direction: column;
@@ -553,7 +512,7 @@ button:hover {
   padding: 2rem 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
-  max-width: 40rem; /* 640px */
+  max-width: 40rem; 
   margin: 2rem auto;
 }
 
@@ -567,6 +526,7 @@ button:hover {
 .input-group {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .input-group label {
@@ -580,6 +540,7 @@ button:hover {
   border-radius: 0.25rem;
   border: 0.0625rem solid var(--shadow-color);
   margin-top: 0.5rem;
+  width: 100%;
 }
 
 .input-group input[type="text"]:focus {
@@ -599,7 +560,6 @@ button:hover {
   text-align: center;
 }
 
-/* Footer */
 footer {
   background-color: var(--bg-tint);
   padding: 1rem;
@@ -621,7 +581,6 @@ b {
   margin-right: 1.5rem;
 }
 
-/* Contact Section */
 .contact {
   margin: 2rem 0;
   padding: 1.5rem 1rem;
@@ -661,7 +620,16 @@ b {
   color: #fff;
 }
 
-/* Post Card Styles */
+.post-card {
+  background-color: var(--bg-tint);
+  padding: 2rem;
+  margin: 1.5rem auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem var(--shadow-color);
+  max-width: 56.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .post-card h3 a {
   text-decoration: none;
   color: var(--main-color);
@@ -675,26 +643,48 @@ b {
   margin-top: 0.5rem;
 }
 
-/* Hover Effects for the Blog Post Card */
-.post-item:hover {
+.post-item:hover,
+.post-name:hover {
   transform: translateY(-0.25rem);
   box-shadow: 0 0.5rem 1rem var(--shadow-color);
 }
 
-/* Responsive design */
 @media (max-width: 48rem) {
-  /* 768px */
-  .posts-grid {
+  
+  .top-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .switch-theme {
+    position: absolute;
+    left: 1.25rem;
+    top: 1.25rem;
+  }
+
+  .title2 {
+    display: none;
+  }
+
+  .tech-container,
+  .posts-grid,
+  .content-wrapper {
     grid-template-columns: 1fr;
+    padding: 0.625rem;
+  }
+
+  .post h1 {
+    font-size: 1.5rem;
   }
 }
 
-/* Spacer */
 .spacer {
   padding: 0.5rem;
 }
 
-/* Blog Title Section */
 .blog-title {
   text-align: center;
   margin: 2rem 0 1.5rem 0;
@@ -707,7 +697,6 @@ b {
   text-transform: uppercase;
 }
 
-/* Blog Content Section */
 .blog-content {
   margin-top: 1.5rem;
   line-height: 1.6;
@@ -728,7 +717,6 @@ b {
   margin-bottom: 1rem;
 }
 
-/* Blog Links Section */
 .blog-links {
   margin-top: 2rem;
   padding: 1.5rem;
@@ -767,25 +755,12 @@ b {
   border-bottom-color: var(--text-color-secondary);
 }
 
-/* Content Wrapper */
 .content-wrapper {
   max-width: 50rem;
   margin: 0 auto;
   padding: 1.25rem;
 }
 
-/* Detailed Post Card */
-.post-card {
-  background-color: var(--bg-tint);
-  padding: 2rem;
-  margin: 1.5rem auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem var(--shadow-color);
-  max-width: 56.25rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Post Titles */
 .post h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
@@ -793,7 +768,6 @@ b {
   text-align: center;
 }
 
-/* Paragraphs inside the Content */
 .post p {
   font-size: 1rem;
   margin: 0.5rem 0;
@@ -801,7 +775,6 @@ b {
   line-height: 1.6;
 }
 
-/* Content Area */
 .content {
   white-space: pre-line;
   word-break: break-word;
@@ -811,19 +784,6 @@ b {
   margin: 0 auto;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 48rem) {
-  /* 768px */
-  .content-wrapper {
-    padding: 0.625rem;
-  }
-
-  .post h1 {
-    font-size: 1.5rem;
-  }
-}
-
-/* Home Button Styling */
 .home-button {
   display: inline-block;
   background-color: var(--main-color);
@@ -845,7 +805,6 @@ b {
   box-shadow: 0 0.75rem 1.5rem var(--shadow-color);
 }
 
-/* Center the button on the page */
 .home-button-container {
   display: flex;
   justify-content: center;
@@ -853,7 +812,6 @@ b {
   height: 50rem;
 }
 
-/* Blog section */
 .blog-posts {
   padding: 2rem;
   max-width: 56.25rem;
@@ -867,14 +825,12 @@ b {
   color: var(--main-color);
 }
 
-/* Post card wrapper */
 .post-name-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
   gap: 1rem;
 }
 
-/* Individual post card */
 .post-name {
   background-color: var(--boxes);
   padding: 1rem;
@@ -883,12 +839,6 @@ b {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.post-name:hover {
-  transform: translateY(-0.25rem);
-  box-shadow: 0 0.75rem 1.5rem var(--shadow-color);
-}
-
-/* Post title styling */
 .post-title a {
   font-size: 1.25rem;
   text-decoration: none;
@@ -904,7 +854,6 @@ b {
   color: var(--text-color-secondary);
 }
 
-/* Post date and excerpt */
 .post-date {
   color: var(--text-color-secondary);
   font-size: 0.85rem;
@@ -917,7 +866,6 @@ b {
   margin: 1rem 0;
 }
 
-/* Read more link */
 .read-more {
   display: inline-block;
   margin-top: 1rem;
@@ -932,7 +880,6 @@ b {
   border-color: var(--text-color-secondary);
 }
 
-/* Search Bar Styles */
 .search-container {
   display: flex;
   justify-content: center;
@@ -947,55 +894,6 @@ b {
   border-radius: 0.25rem;
 }
 
-/* Converter */
-.converter {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-label {
-  font-size: 1rem;
-  color: var(--text-color);
-}
-
-input[type="text"] {
-  font-size: 1rem;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  border: 0.0625rem solid var(--shadow-color);
-  width: 100%;
-  margin-top: 0.5rem;
-}
-
-input[type="text"]:focus {
-  outline: none;
-  border-color: var(--main-color);
-}
-
-/* Button Styles */
-button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: var(--main-color);
-  color: #fff;
-  border: none;
-  border-radius: 0.25rem;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #1c86ee;
-}
-
-/* Tools Section */
 .tools .title {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -1004,7 +902,6 @@ button:hover {
   letter-spacing: 0.1rem;
 }
 
-/* Tools Container Styling */
 .tl-container {
   display: flex;
   justify-content: center;
@@ -1012,7 +909,6 @@ button:hover {
   gap: 1rem;
 }
 
-/* Individual Tool Card */
 .tool-card {
   background-color: var(--boxes);
   padding: 1.5rem;
@@ -1041,48 +937,35 @@ button:hover {
   color: var(--main-color);
 }
 
-/* Handle code blocks and preformatted text */
-pre,
-code {
-  white-space: pre-wrap; /* Ensure long lines wrap inside code blocks */
-  word-wrap: break-word; /* Break long words inside code blocks */
-  overflow-x: auto; /* Enable horizontal scrolling if necessary */
-}
-
-/* Basic table styling */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
   font-size: 1em;
   text-align: left;
-  border: 1px;
-  overflow-x: auto; /* Enable horizontal scrolling for tables */
-  display: block; /* Ensure tables can be scrolled on small screens */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile devices */
+  overflow-x: auto; 
+  display: block; 
+  -webkit-overflow-scrolling: touch; 
 }
 
-/* Table headers and cells */
 table th,
 table td {
   padding: 12px 15px;
   border: 1px solid #dddddd;
-  white-space: nowrap; /* Prevent table text from wrapping */
-  text-overflow: ellipsis; /* Add ellipsis (...) to overflowing text */
-  overflow: hidden; /* Hide overflowed content */
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+  overflow: hidden; 
 }
 
-/* Add background to table headers */
 table th {
   background-color: var(--bg-tint);
   font-weight: bold;
 }
 
-/* Responsive adjustments for smaller screens */
 @media screen and (max-width: 600px) {
   table th,
   table td {
-    font-size: 0.9em; /* Reduce font size for smaller screens */
+    font-size: 0.9em; 
   }
 
   p,
@@ -1094,26 +977,17 @@ table th {
   h6,
   blockquote,
   pre {
-    font-size: 0.95em; /* Adjust text size on smaller screens */
+    font-size: 0.95em; 
   }
 
   table {
-    display: block; /* Ensure tables can scroll on small screens */
-    overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+    display: block; 
+    overflow-x: auto; 
   }
 
   pre {
-    white-space: pre-wrap; /* Ensure code blocks wrap on small screens */
-    word-wrap: break-word; /* Handle long words in code blocks */
-    overflow-x: auto; /* Horizontal scrolling if necessary */
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    overflow-x: auto; 
   }
-}
-
-/* Handle long URLs or strings in paragraphs and code blocks */
-a,
-p,
-blockquote,
-code {
-  word-break: break-all; /* Break long words or URLs */
-  white-space: normal; /* Ensure normal word wrapping */
 }
