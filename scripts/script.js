@@ -21,6 +21,10 @@ function toggleTheme() {
 
   document.documentElement.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
+
+  // Update Prism.js theme
+  document.getElementById("prism-light").disabled = newTheme === "light";
+  document.getElementById("prism-dark").disabled = newTheme !== "light";
 }
 
 function calculateInfo() {
@@ -49,16 +53,15 @@ document.addEventListener("DOMContentLoaded", function () {
   setIcon(savedTheme);
 });
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const fullscreenNav = document.getElementById('fullscreen-nav');
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const fullscreenNav = document.getElementById("fullscreen-nav");
 
   // Toggle the menu visibility and icon
-  hamburgerBtn.addEventListener('click', function() {
-    fullscreenNav.classList.toggle('active');
+  hamburgerBtn.addEventListener("click", function () {
+    fullscreenNav.classList.toggle("active");
     // Change the button icon based on the menu state
-    if (fullscreenNav.classList.contains('active')) {
+    if (fullscreenNav.classList.contains("active")) {
       hamburgerBtn.innerHTML = '<i class="fas fa-times"></i>'; // X icon
     } else {
       hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>'; // Hamburger icon
@@ -66,26 +69,22 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const searchInput = document.getElementById('search-input');
-  const posts = document.querySelectorAll('.post-name');
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search-input");
+  const posts = document.querySelectorAll(".post-name");
 
-  searchInput.addEventListener('input', () => {
+  searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase();
 
-    posts.forEach(post => {
-      const title = post.getAttribute('data-title');
-      const tags = post.getAttribute('data-tags');
+    posts.forEach((post) => {
+      const title = post.getAttribute("data-title");
+      const tags = post.getAttribute("data-tags");
 
       if (title.includes(query) || tags.includes(query)) {
-        post.style.display = 'block';
+        post.style.display = "block";
       } else {
-        post.style.display = 'none';
+        post.style.display = "none";
       }
     });
   });
 });
-
-
-
-

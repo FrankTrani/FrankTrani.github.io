@@ -5,6 +5,9 @@ date: 2024-10-23
 categories: CS115
 ---
 
+In this lecture, we covered essential building blocks of computer architecture, including D-Latches, random access memory, and the basic operation of a CPU. Understanding these concepts is crucial for diving deeper into the design and functionality of modern computing systems.
+
+--- 
 ## From SR-Latches to D-Latches
 
 ### De Morgan's Theorem Review:
@@ -118,11 +121,8 @@ The **Central Processing Unit (CPU)** is the brain of the computer. It is respon
 1. **Registers**: Small, fast storage locations within the CPU used to hold temporary data and instructions.
    - **General-purpose registers**: Used for temporary data storage during calculations.
    - **Special-purpose registers**: Include the instruction register and program counter.
-
 2. **Instruction Register**: Holds the current instruction being executed by the CPU.
-
 3. **Control Unit**: Manages the execution of instructions by coordinating data flow between the CPU, memory, and input/output devices.
-
 4. **Arithmetic Logic Unit (ALU)**: Performs mathematical and logical operations, such as addition, subtraction, AND, OR, etc.
 
 ### CPU Operation: Fetch, Decode, Execute
@@ -136,7 +136,3 @@ The CPU operates in a continuous cycle, executing one instruction at a time. Thi
 This cycle happens millions of times per second in modern processors, allowing computers to perform complex tasks quickly and efficiently.
 
 ---
-
-### Conclusion
-
-In this lecture, we covered essential building blocks of computer architecture, including D-Latches, random access memory, and the basic operation of a CPU. Understanding these concepts is crucial for diving deeper into the design and functionality of modern computing systems.

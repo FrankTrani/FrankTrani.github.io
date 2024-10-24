@@ -5,6 +5,11 @@ date: 2024-10-21
 categories: CS115
 ---
 
+
+In this post, we covered the foundation of modern computing, including the use of binary numbers, logic gates, and memory elements. We explored how negative numbers are represented using 1’s complement and 2’s complement, and why 2’s complement is the standard in modern systems. We also delved into the architecture of different machines, ranging from personal computers to supercomputers. Understanding these foundational concepts is essential for understanding how computers work at the most basic level, and how these principles are applied in modern computer systems.
+
+---
+
 ## Introduction to Digital Logic, Binary Systems, and Computer Architecture
 
 In digital systems, everything comes down to 1s and 0s. Computers rely on **binary logic** to process data, make decisions, and perform calculations. At the heart of it all are **logic gates**, **memory elements**, and the architecture that governs how computers handle data, execute instructions, and communicate with other components. In this post, we'll explore binary numbers, machine architecture, the differences between types of computing systems, and the evolution of binary number representation in computers.
@@ -394,9 +399,5 @@ The architecture of computers can vary significantly depending on the type of ma
 - **Highly Parallel Architecture**: Supercomputers are designed for massive computation tasks, often using thousands of processors to perform complex calculations in parallel.
 
 ---
-
-## Summary
-
-In this post, we covered the foundation of modern computing, including the use of binary numbers, logic gates, and memory elements. We explored how negative numbers are represented using 1’s complement and 2’s complement, and why 2’s complement is the standard in modern systems. We also delved into the architecture of different machines, ranging from personal computers to supercomputers. Understanding these foundational concepts is essential for understanding how computers work at the most basic level, and how these principles are applied in modern computer systems.
 
 
