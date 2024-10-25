@@ -2,7 +2,7 @@
 layout: post
 title: "Introduction to Computer Architecture and Digital Logic"
 date: 2024-10-25
-categories: CS115
+categories: CS115 Computer-Architecture
 ---
 
 ## Introduction to Computer Architecture and Digital Logic

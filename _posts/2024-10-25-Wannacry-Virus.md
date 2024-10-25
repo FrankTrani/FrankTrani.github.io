@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Understanding the WannaCry Virus"
-date: 2024-10-21
+date: 2024-10-25
 categories: Malware
 ---
 
