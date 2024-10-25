@@ -49,6 +49,39 @@ The C&C functionality adds another layer of control, allowing the attacker to mo
 
 ---
 
+## Discovery of the Kill Switch
+
+The rapid spread of WannaCry was halted when cybersecurity researcher **Marcus Hutchins** discovered a built-in “kill switch.” This kill switch was an unusual feature found in the malware’s code, designed to stop the worm from spreading under certain conditions.
+
+### How the Kill Switch Was Found
+
+Hutchins noticed that WannaCry was programmed to check a specific, nonsensical web domain. If this domain was active, the malware would cease its spread. At the time of the attack, this domain was unregistered, so Hutchins quickly registered it, effectively disabling WannaCry’s spread across networks.
+
+The kill switch worked as follows:
+
+1. **Domain Check**: Every time WannaCry attempted to infect a machine, it first checked if the specific domain was reachable.
+2. **Activation**: Once Hutchins registered the domain, the malware found the domain “active” and terminated its spread on infected systems. 
+
+This discovery significantly reduced the impact of WannaCry, though variations of the malware without this kill switch surfaced later.
+
+---
+
+## Attribution and the Author Behind WannaCry
+
+While the exact authorship of WannaCry remains uncertain, **the North Korean Lazarus Group** is widely believed to be behind the attack. The Lazarus Group, known for its advanced hacking abilities and previous cyberattacks, likely developed WannaCry with a focus on generating revenue through ransomware.
+
+### Evidence Supporting North Korean Involvement
+
+The connection to North Korea is supported by several factors:
+
+- **Code Similarities**: Analysts identified similarities between WannaCry and other malware attributed to the Lazarus Group.
+- **Financial Motive**: North Korea has previously used cybercrime to bypass sanctions and generate revenue, aligning with the ransom demands of WannaCry.
+- **Tactics and Tools**: The attack methods used in WannaCry mirrored those seen in other North Korean cyberattacks, such as the 2014 Sony Pictures hack.
+
+While attribution in cybercrime is challenging, the Lazarus Group’s known tactics and motives strongly align with the WannaCry attack.
+
+---
+
 ## Protecting Against WannaCry and Similar Threats
 
 WannaCry’s widespread impact in 2017 highlighted the importance of security measures to protect against ransomware and worm-based attacks. Here are some key preventative steps:
@@ -60,4 +93,3 @@ WannaCry’s widespread impact in 2017 highlighted the importance of security me
 5. **Disable SMBv1 Protocol**: WannaCry exploited a vulnerability in SMBv1, an outdated protocol. Disabling SMBv1 and using more secure protocols can help prevent similar attacks.
 
 ---
-
