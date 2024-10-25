@@ -7,7 +7,8 @@ categories: CS115
 
 In this lecture, we covered essential building blocks of computer architecture, including D-Latches, random access memory, and the basic operation of a CPU. Understanding these concepts is crucial for diving deeper into the design and functionality of modern computing systems.
 
---- 
+---
+
 ## From SR-Latches to D-Latches
 
 ### De Morgan's Theorem Review:
@@ -20,6 +21,7 @@ The two forms of De Morgan’s Theorem are:
 2. **NOT (A OR B) = NOT A AND NOT B**
 
 This means:
+
 - If you don’t have an AND gate, you can use OR gates and inverters to replicate its behavior.
 - If you don’t have an OR gate, you can use AND gates and inverters to achieve the same outcome.
 
@@ -28,16 +30,19 @@ This means:
 A D-Latch, also known as a **Data Latch** or **Delay Latch**, is a fundamental building block in sequential logic circuits. It is used to store a single bit of data. The latch operates with a **strobe** or **enable** signal, which controls when the data is latched or stored.
 
 Here’s the basic structure of a D-Latch:
+
 - **2 NOR gates**: Used in the set-reset (SR) configuration to control the state of the output.
 - **2 NAND gates**: Help manage the input and control logic.
 - **1 NOT gate**: Used for inverting signals where needed.
 
 The D-Latch has three main signals:
+
 - **D (Data)**: The input bit that you want to store (either a 1 or a 0).
 - **Strobe/Enable**: A control signal that determines when the latch is active. When this signal is high (1), the latch captures the value on the D input. When it’s low (0), the latch holds its previous state.
 - **Q (Output)**: The stored output bit.
 
 #### How the D-Latch Works:
+
 - When the strobe signal is high, the latch is "open" and will continuously output whatever is present at the D input.
 - When the strobe signal is low, the latch is "closed" and it retains the value that was present at D just before the strobe signal dropped.
 
@@ -67,6 +72,7 @@ Random Access Memory, or **RAM**, is a key component of modern computing systems
 ### Basic Structure of RAM
 
 In a simplified 4-row RAM model, the memory consists of:
+
 - **2 Address Bits**: These bits are used to select one of the four rows (memory locations).
 - **3 Data Bits**: These bits represent the actual data stored in each memory location.
 - **Read/Write Bit**: This control signal determines whether data is being written to or read from the memory.
@@ -80,12 +86,12 @@ In this model, we assume the RAM has 4 rows, each holding 3 bits of data. Theref
 
 #### Example Memory Map:
 
-| Address Bit | Row  |
-|-------------|------|
-| 00          | 1    |
-| 01          | 2    |
-| 10          | 3    |
-| 11          | 4    |
+| Address Bit | Row |
+| ----------- | --- |
+| 00          | 1   |
+| 01          | 2   |
+| 10          | 3   |
+| 11          | 4   |
 
 In this example, if the address bits are `00`, the first row is accessed. If the address bits are `11`, the fourth row is accessed.
 
@@ -96,7 +102,7 @@ The 2-bit decoder is an essential component for selecting which row of memory to
 #### Decoder Truth Table:
 
 | Input | Output |
-|-------|--------|
+| ----- | ------ |
 | 00    | 1      |
 | 01    | 2      |
 | 10    | 3      |

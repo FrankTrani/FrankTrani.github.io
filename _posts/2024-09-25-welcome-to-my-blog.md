@@ -33,7 +33,7 @@ I plan to post regularly, covering the latest news, tutorials, and personal refl
 
 If you want to keep up with my journey or have specific topics you'd like me to write about, feel free to reach out! I'd love to hear your suggestions, questions, and even challenges you're facing.
 
-I’m also planning to share some of my favorite tools and frameworks, and interesting articles. 
+I’m also planning to share some of my favorite tools and frameworks, and interesting articles.
 
 So, be sure to check back often, and if you're as passionate about technology as I am, I hope you'll find something of value here. Thank you for joining me, and I look forward to diving into these fascinating topics together!
 

@@ -18,41 +18,41 @@ blockquote,
 pre,
 table {
   word-wrap: normal;
-  overflow-wrap: normal; 
-  hyphens: auto; 
+  overflow-wrap: normal;
+  hyphens: auto;
 }
 
 pre,
 code {
-  white-space: pre-wrap; 
-  word-wrap: normal; 
-  overflow-x: auto; 
+  white-space: pre-wrap;
+  word-wrap: normal;
+  overflow-x: auto;
 }
 
 a,
 p,
 blockquote,
 code {
-  word-break: normal; 
-  white-space: normal; 
+  word-break: normal;
+  white-space: normal;
 }
 
 :root {
-  --main-color: #0072e4; 
+  --main-color: #0072e4;
   --bg-color: #0d0f13;
   --bg-tint: #1b1e2a;
-  --text-color: #ecf0f1; 
-  --text-color-secondary: #bdc3c7; 
-  --shadow-color: rgba(0, 0, 0, 0.1); 
-  --boxes: #0b263b; 
+  --text-color: #ecf0f1;
+  --text-color-secondary: #bdc3c7;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --boxes: #0b263b;
 }
 
 :root[data-theme="light"] {
   --bg-color: #bdf0f8;
   --bg-tint: #e6fbff;
-  --text-color: #2c3e50; 
-  --text-color-secondary: #34495e; 
-  --boxes: #92e0ff; 
+  --text-color: #2c3e50;
+  --text-color-secondary: #34495e;
+  --boxes: #92e0ff;
 }
 
 a {
@@ -78,9 +78,9 @@ body {
 
 .container {
   width: 100%;
-  max-width: 75rem; 
-  margin: 0rem auto 6.25rem auto; 
-  padding: 1.5rem; 
+  max-width: 75rem;
+  margin: 0rem auto 6.25rem auto;
+  padding: 1.5rem;
 }
 
 .tools-container,
@@ -106,7 +106,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 1.25rem;
-  max-width: 75rem; 
+  max-width: 75rem;
   margin: 0 auto;
 }
 
@@ -237,7 +237,7 @@ header {
 
 .intro .tagline {
   font-size: 1rem;
-  max-width: 40rem; 
+  max-width: 40rem;
   margin: 0 auto;
   line-height: 1.6;
   color: var(--text-color-secondary);
@@ -269,7 +269,7 @@ button {
 }
 
 button:hover {
-  background-color: #1c86ee; 
+  background-color: #1c86ee;
 }
 
 .projects {
@@ -512,7 +512,7 @@ button:hover {
   padding: 2rem 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
-  max-width: 40rem; 
+  max-width: 40rem;
   margin: 2rem auto;
 }
 
@@ -650,7 +650,6 @@ b {
 }
 
 @media (max-width: 48rem) {
-  
   .top-nav {
     display: none;
   }
@@ -943,18 +942,18 @@ table {
   margin: 20px 0;
   font-size: 1em;
   text-align: left;
-  overflow-x: auto; 
-  display: block; 
-  -webkit-overflow-scrolling: touch; 
+  overflow-x: auto;
+  display: block;
+  -webkit-overflow-scrolling: touch;
 }
 
 table th,
 table td {
   padding: 12px 15px;
   border: 1px solid #dddddd;
-  white-space: nowrap; 
-  text-overflow: ellipsis; 
-  overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 table th {
@@ -965,7 +964,7 @@ table th {
 @media screen and (max-width: 600px) {
   table th,
   table td {
-    font-size: 0.9em; 
+    font-size: 0.9em;
   }
 
   p,
@@ -977,18 +976,18 @@ table th {
   h6,
   blockquote,
   pre {
-    font-size: 0.95em; 
+    font-size: 0.95em;
   }
 
   table {
-    display: block; 
-    overflow-x: auto; 
+    display: block;
+    overflow-x: auto;
   }
 
   pre {
-    white-space: pre-wrap; 
-    word-wrap: break-word; 
-    overflow-x: auto; 
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
   }
 }
 
@@ -1011,7 +1010,6 @@ pre code {
 
 code {
   font-family: "JetBrains Mono", sans-serif;
-
 }
 
 .prism-light-theme {

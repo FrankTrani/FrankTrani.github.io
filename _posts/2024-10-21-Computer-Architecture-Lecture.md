@@ -5,7 +5,6 @@ date: 2024-10-21
 categories: CS115
 ---
 
-
 In this post, we covered the foundation of modern computing, including the use of binary numbers, logic gates, and memory elements. We explored how negative numbers are represented using 1’s complement and 2’s complement, and why 2’s complement is the standard in modern systems. We also delved into the architecture of different machines, ranging from personal computers to supercomputers. Understanding these foundational concepts is essential for understanding how computers work at the most basic level, and how these principles are applied in modern computer systems.
 
 ---
@@ -84,12 +83,13 @@ To address these issues, two better methods were developed: **1's complement** a
 
 Example:
 
+0011 (3 in decimal)
 
-  0011  (3 in decimal)
-+ 1100  (-3 in decimal, 1's complement form)
---------
-  1111  (0 in decimal, after adding overflow bit)
+- 1100 (-3 in decimal, 1's complement form)
 
+---
+
+1111 (0 in decimal, after adding overflow bit)
 
 ### Limitations of 1's Complement:
 
@@ -159,7 +159,7 @@ The **NOT gate** is the simplest type of logic gate. It takes one input and prod
 #### Truth Table:
 
 | Input (x) | Output ($\neg$ x) |
-|-----------|-------------------|
+| --------- | ----------------- |
 | 0         | 1                 |
 | 1         | 0                 |
 
@@ -171,12 +171,12 @@ An **AND gate** produces an output of 1 only when both of its inputs are 1.
 
 #### Truth Table:
 
-| x | y | AND (x * y) |
-|---|---|-------------|
-| 0 | 0 | 0           |
-| 0 | 1 | 0           |
-| 1 | 0 | 0           |
-| 1 | 1 | 1           |
+| x   | y   | AND (x \* y) |
+| --- | --- | ------------ |
+| 0   | 0   | 0            |
+| 0   | 1   | 0            |
+| 1   | 0   | 0            |
+| 1   | 1   | 1            |
 
 ---
 
@@ -186,12 +186,12 @@ The **OR gate** produces an output of 1 if at least one of its inputs is 1. If b
 
 #### Truth Table:
 
-| x | y | OR (x + y) |
-|---|---|------------|
-| 0 | 0 | 0          |
-| 0 | 1 | 1          |
-| 1 | 0 | 1          |
-| 1 | 1 | 1          |
+| x   | y   | OR (x + y) |
+| --- | --- | ---------- |
+| 0   | 0   | 0          |
+| 0   | 1   | 1          |
+| 1   | 0   | 1          |
+| 1   | 1   | 1          |
 
 ---
 
@@ -201,12 +201,12 @@ The **XOR gate** produces an output of 1 if its inputs are different. If both in
 
 #### Truth Table:
 
-| x | y | XOR (x ⊕ y) |
-|---|---|-------------|
-| 0 | 0 | 0           |
-| 0 | 1 | 1           |
-| 1 | 0 | 1           |
-| 1 | 1 | 0           |
+| x   | y   | XOR (x ⊕ y) |
+| --- | --- | ----------- |
+| 0   | 0   | 0           |
+| 0   | 1   | 1           |
+| 1   | 0   | 1           |
+| 1   | 1   | 0           |
 
 ---
 
@@ -236,12 +236,12 @@ A **NAND gate** is the opposite of an AND gate. It produces a low output (0) onl
 
 #### Truth Table:
 
-| x | y | NAND (x, y) |
-|---|---|-------------|
-| 0 | 0 | 1           |
-| 0 | 1 | 1           |
-| 1 | 0 | 1           |
-| 1 | 1 | 0           |
+| x   | y   | NAND (x, y) |
+| --- | --- | ----------- |
+| 0   | 0   | 1           |
+| 0   | 1   | 1           |
+| 1   | 0   | 1           |
+| 1   | 1   | 0           |
 
 ---
 
@@ -251,12 +251,12 @@ A **NOR gate** is the opposite of an OR gate. It produces a high output (1) only
 
 #### Truth Table:
 
-| x | y | NOR (x, y) |
-|---|---|------------|
-| 0 | 0 | 1          |
-| 0 | 1 | 0          |
-| 1 | 0 | 0          |
-| 1 | 1 | 0          |
+| x   | y   | NOR (x, y) |
+| --- | --- | ---------- |
+| 0   | 0   | 1          |
+| 0   | 1   | 0          |
+| 1   | 0   | 0          |
+| 1   | 1   | 0          |
 
 ---
 
@@ -268,12 +268,12 @@ An **SR latch** is a simple memory device built using NAND or NOR gates. It has 
 
 #### Truth Table for NAND-based SR Latch:
 
-| S | R | Q (next state) | Description       |
-|---|---|----------------|-------------------|
-| 0 | 0 | Invalid        | Undefined state   |
-| 0 | 1 | 0              | Reset state       |
-| 1 | 0 | 1              | Set state         |
-| 1 | 1 | Q (previous)   | Hold previous state |
+| S   | R   | Q (next state) | Description         |
+| --- | --- | -------------- | ------------------- |
+| 0   | 0   | Invalid        | Undefined state     |
+| 0   | 1   | 0              | Reset state         |
+| 1   | 0   | 1              | Set state           |
+| 1   | 1   | Q (previous)   | Hold previous state |
 
 ---
 
@@ -283,11 +283,11 @@ A **D latch** is a modified SR latch with only one input, called **D (Data)**, a
 
 #### Truth Table for D Latch:
 
-| C (Clock) | D (Data) | Q (Output) | $\neg Q$ (Inverted Output) |
-|-----------|----------|------------|----------------------------|
-| 0         | X        | Q (previous) | $\neg Q$ (previous)      |
-| 1         | 0        | 0          | 1                          |
-| 1         | 1        | 1          | 0                          |
+| C (Clock) | D (Data) | Q (Output)   | $\neg Q$ (Inverted Output) |
+| --------- | -------- | ------------ | -------------------------- |
+| 0         | X        | Q (previous) | $\neg Q$ (previous)        |
+| 1         | 0        | 0            | 1                          |
+| 1         | 1        | 1            | 0                          |
 
 ---
 
@@ -399,5 +399,3 @@ The architecture of computers can vary significantly depending on the type of ma
 - **Highly Parallel Architecture**: Supercomputers are designed for massive computation tasks, often using thousands of processors to perform complex calculations in parallel.
 
 ---
-
-

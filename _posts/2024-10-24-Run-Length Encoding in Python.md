@@ -40,7 +40,7 @@ MAX_RUN_LENGTH = 2**COMPRESSED_BLOCK_SIZE - 1
 
 These constants ensure that we never exceed the block size limits when encoding or decoding.
 
-### Compression Function: ```compress(S)```
+### Compression Function: `compress(S)`
 
 ```python
 def compress(S):
@@ -61,22 +61,22 @@ def compress(S):
             binary_count = format(count, "0" + str(COMPRESSED_BLOCK_SIZE) + "b")
             next_bit = "1" if current_bit == "0" else "0"
             return binary_count + compress_recursive(rest_S, next_bit)
-    
+
     if not S:
         return ""
-    
+
     if S[0] == "0":
-        initial_bit = "0" 
+        initial_bit = "0"
         return compress_recursive(S, initial_bit)
     else:
         zero_count = format(0, "0" + str(COMPRESSED_BLOCK_SIZE) + "b")
         return zero_count + compress_recursive(S, "1")
 ```
 
-
 #### Explanation:
 
 1. **compress_recursive(S, current_bit)**: This helper function compresses the binary string recursively by:
+
    - Counting how many consecutive bits are the same as the current bit.
    - Storing this count as a binary string of length `COMPRESSED_BLOCK_SIZE`.
    - Recursively processing the rest of the string with the opposite bit.
@@ -109,6 +109,7 @@ def uncompress(C):
 #### Explanation:
 
 1. **uncompress_recursive(C, current_bit)**: This helper function works recursively by:
+
    - Reading a block of length `COMPRESSED_BLOCK_SIZE` from the compressed string.
    - Converting this block from binary to decimal to determine the run length.
    - Reconstructing the original bits by repeating the current bit for the decoded run length.
