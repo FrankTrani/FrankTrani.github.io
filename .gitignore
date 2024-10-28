@@ -13,3 +13,7 @@ Gemfile.lock
 .DS_Store
 Thumbs.db
 *.swp
+
+#files
+
+_posts/2024-10-24-Run-Length Encoding in Python.md
