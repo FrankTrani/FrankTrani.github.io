@@ -5,119 +5,119 @@ permalink: /pascals-triangle/
 ---
 
 <section class="triangle-section">
-  <h1>Pascal's Triangle</h1>
-  <label for="num-rows">Enter the number of rows:</label>
-  <input type="number" id="num-rows" min="1" max="20" value="5" />
-  <button onclick="generateTriangle()">Generate Triangle</button>
+    <h1>Pascal's Triangle</h1>
+    <label for="num-rows">Enter the number of rows:</label>
+    <input type="number" id="num-rows" min="1" max="20" value="5" />
+    <button onclick="generateTriangle()">Generate Triangle</button>
 
-  <div id="triangle-container"></div>
+    <div id="triangle-container"></div>
 </section>
 
 <script>
-  function generateTriangle() {
-    const numRows = parseInt(document.getElementById("num-rows").value);
-    const container = document.getElementById("triangle-container");
-    container.innerHTML = ""; // Clear previous content
+    function generateTriangle() {
+        const numRows = parseInt(document.getElementById("num-rows").value);
+        const container = document.getElementById("triangle-container");
+        container.innerHTML = ""; // Clear previous content
 
-    let triangle = [[1]];
+        let triangle = [[1]];
 
-    // Generate Pascal's Triangle
-    for (let i = 1; i < numRows; i++) {
-      let row = [1];
-      for (let j = 1; j < i; j++) {
-        row.push(triangle[i - 1][j - 1] + triangle[i - 1][j]);
-      }
-      row.push(1);
-      triangle.push(row);
+        // Generate Pascal's Triangle
+        for (let i = 1; i < numRows; i++) {
+            let row = [1];
+            for (let j = 1; j < i; j++) {
+                row.push(triangle[i - 1][j - 1] + triangle[i - 1][j]);
+            }
+            row.push(1);
+            triangle.push(row);
+        }
+
+        // Calculate the maximum number of digits for consistent cell size
+        const maxNumDigits = Math.max(...triangle[numRows - 1]).toString().length;
+        const cellWidth = Math.max(maxNumDigits * 0.7, 3); // Fixed cell width for larger numbers
+
+        // Display Triangle with consistent cell width and font scaling
+        triangle.forEach((row) => {
+            const rowDiv = document.createElement("div");
+            rowDiv.classList.add("triangle-row");
+            row.forEach((num) => {
+                const cell = document.createElement("span");
+                cell.classList.add("triangle-cell");
+                cell.innerText = num;
+                cell.style.width = `${cellWidth}em`;
+                cell.style.fontSize = `calc(1.2em - ${maxNumDigits * 0.05}em)`;
+                rowDiv.appendChild(cell);
+            });
+            container.appendChild(rowDiv);
+        });
     }
 
-    // Calculate the maximum number of digits for consistent cell size
-    const maxNumDigits = Math.max(...triangle[numRows - 1]).toString().length;
-    const cellWidth = Math.max(maxNumDigits * 0.7, 3); // Fixed cell width for larger numbers
-
-    // Display Triangle with consistent cell width and font scaling
-    triangle.forEach((row) => {
-      const rowDiv = document.createElement("div");
-      rowDiv.classList.add("triangle-row");
-      row.forEach((num) => {
-        const cell = document.createElement("span");
-        cell.classList.add("triangle-cell");
-        cell.innerText = num;
-        cell.style.width = `${cellWidth}em`;
-        cell.style.fontSize = `calc(1.2em - ${maxNumDigits * 0.05}em)`;
-        rowDiv.appendChild(cell);
-      });
-      container.appendChild(rowDiv);
-    });
-  }
-
-  // Generate initial triangle
-  window.onload = generateTriangle;
+    // Generate initial triangle
+    window.onload = generateTriangle;
 </script>
 
 <style>
-  /* General Page Styling */
-  .triangle-section {
-    text-align: center;
-    padding: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-  }
+    /* General Page Styling */
+    .triangle-section {
+        text-align: center;
+        padding: 20px;
+        max-width: 700px;
+        margin: 0 auto;
+    }
 
-  .triangle-section h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--main-color);
-  }
+    .triangle-section h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: var(--main-color);
+    }
 
-  .triangle-section label {
-    font-size: 1.1rem;
-    color: var(--text-color);
-  }
+    .triangle-section label {
+        font-size: 1.1rem;
+        color: var(--text-color);
+    }
 
-  .triangle-section input {
-    padding: 8px;
-    font-size: 1rem;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    width: 60px;
-    margin: 10px;
-  }
+    .triangle-section input {
+        padding: 8px;
+        font-size: 1rem;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        width: 60px;
+        margin: 10px;
+    }
 
-  .triangle-section button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: var(--main-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+    .triangle-section button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: var(--main-color);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
-  .triangle-section button:hover {
-    background-color: #003e80;
-  }
+    .triangle-section button:hover {
+        background-color: #003e80;
+    }
 
-  /* Triangle Display Styling */
-  #triangle-container {
-    margin-top: 20px;
-  }
+    /* Triangle Display Styling */
+    #triangle-container {
+        margin-top: 20px;
+    }
 
-  .triangle-row {
-    display: flex;
-    justify-content: center;
-  }
+    .triangle-row {
+        display: flex;
+        justify-content: center;
+    }
 
-  .triangle-cell {
-    display: inline-block;
-    margin: 3px;
-    padding: 5px;
-    color: #fff;
-    background-color: var(--bg-tint);
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    min-width: 3em;
-  }
+    .triangle-cell {
+        display: inline-block;
+        margin: 3px;
+        padding: 5px;
+        color: #fff;
+        background-color: var(--bg-tint);
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        min-width: 3em;
+    }
 </style>

@@ -5,6 +5,10 @@ date: 2024-10-28
 categories: Computer-Science Computer-Architecture
 ---
 
+This post introduces assembly language fundamentals and the Harvey Mudd Miniature Machine (HMMM), covering essential commands and an example program. It offers a foundation in low-level programming and insights into how CPUs process instructions directly.
+
+---
+
 ## What is Assembly Language?
 
 **Assembly language** is a low-level programming language that allows programmers to write instructions directly for the CPU. Unlike high-level languages, which must be translated into machine code through a compiler, assembly language goes through an **assembler** to convert instructions into binary (1’s and 0’s) that the CPU can execute. This process makes assembly language one step above machine language and provides a way to interact directly with the hardware.

@@ -1,135 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frank Trani's Portfolio - Home</title>
 
-    <link
-      rel="stylesheet"
-      href="{{ '/scripts/styles.css?v=1.0' | relative_url }}"
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - Frank Trani's Portfolio</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <script
-      src="{{ '/scripts/script.js?v=1.0' | relative_url }}"
-      defer
-    ></script>
-    <script type="text/javascript">
-      window.MathJax = {
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
-          displayMath: [
-            ["$$", "$$"],
-            ["\\[", "\\]"],
-          ],
-        },
-      };
-    </script>
-    <script
-      type="text/javascript"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    ></script>
-    <!-- Include Prism.js CSS for syntax highlighting -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-      rel="stylesheet"
-      id="prism-light"
-      disabled
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
-      rel="stylesheet"
-      id="prism-dark"
-    />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ '/scripts/styles.css?v=1.0' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+    id="prism-dark">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+    id="prism-light" disabled>
 
-    <!-- Include Prism.js JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
-  </head>
+  <!-- JavaScript Libraries -->
+  <script src="{{ '/scripts/script.js?v=1.0' | relative_url }}" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
 
-  <body>
-    <header>
-      <div class="nav-wrapper">
-        <div class="title-wrapper">
-          <a class="title2">Frank Trani</a>
-        </div>
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-        <button class="switch-theme" id="switch-theme-btn"></button>
+  <!-- MathJax Configuration -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+      }
+    };
+  </script>
 
-        <button class="hamburger" id="hamburger-btn">
-          <i class="fas fa-bars"></i>
-        </button>
 
-        <nav class="top-nav">
-          <ul>
-            <li class="{% if page.url == '/' %}active{% endif %}">
-              <a href="{{ '/' | relative_url }}">Home</a>
-            </li>
-            <li class="{% if page.url == '/links/' %}active{% endif %}">
-              <a href="{{ '/links/' | relative_url }}">Links</a>
-            </li>
-            <li class="{% if page.url == '/about-me/' %}active{% endif %}">
-              <a href="{{ '/about-me/' | relative_url }}">About Me</a>
-            </li>
-            <li
-              class="{% if page.url == '/blog/' or page.url contains '/blog/' %}active{% endif %}"
-            >
-              <a href="{{ '/blog/' | relative_url }}">Blog</a>
-            </li>
-            <li class="{% if page.url == '/tools/' %}active{% endif %}">
-              <a href="{{ '/tools/' | relative_url }}">Tools</a>
-            </li>
-          </ul>
-        </nav>
+</head>
 
-        <nav class="fullscreen-nav" id="fullscreen-nav">
-          <ul>
-            <li class="{% if page.url == '/' %}active{% endif %}">
-              <a href="{{ '/' | relative_url }}">Home</a>
-            </li>
-            <li class="{% if page.url == '/links/' %}active{% endif %}">
-              <a href="{{ '/links/' | relative_url }}">Links</a>
-            </li>
-            <li class="{% if page.url == '/about-me/' %}active{% endif %}">
-              <a href="{{ '/about-me/' | relative_url }}">About Me</a>
-            </li>
-            <li
-              class="{% if page.url == '/blog/' or page.url contains '/blog/' %}active{% endif %}"
-            >
-              <a href="{{ '/blog/' | relative_url }}">Blog</a>
-            </li>
-            <li class="{% if page.url == '/tools/' %}active{% endif %}">
-              <a href="{{ '/tools/' | relative_url }}">Tools</a>
-            </li>
-          </ul>
-        </nav>
+<body>
+  <header>
+    <div class="nav-wrapper">
+      <div class="title-wrapper">
+        <a href="{{ '/' | relative_url }}" class="title2">Frank Trani</a>
       </div>
-    </header>
-    <main class="container">{{ content }}</main>
 
-    <footer>
-      <nametag>
-        All opinions expressed are my own and do not reflect the views of my
-        employer or university.
-      </nametag>
-      <b>
-        <a
-          href="https://github.com/Schizzle13/Schizzle13.github.io"
-          target="_blank"
-          >Source Code</a
-        >
-      </b>
-    </footer>
-  </body>
+      <button class="switch-theme" id="switch-theme-btn"></button>
+      <button class="hamburger" id="hamburger-btn"><i class="fas fa-bars"></i></button>
+
+      <!-- Navigation -->
+      <nav class="top-nav">
+        <ul>
+          <li class="{% if page.url == '/' %}active{% endif %}">
+            <a href="{{ '/' | relative_url }}">Home</a>
+          </li>
+          <li class="{% if page.url == '/links/' %}active{% endif %}">
+            <a href="{{ '/links/' | relative_url }}">Links</a>
+          </li>
+          <li class="{% if page.url contains '/blog/' %}active{% endif %}">
+            <a href="{{ '/blog/' | relative_url }}">Blog</a>
+          </li>
+          <li class="{% if page.url contains '/notes/' %}active{% endif %}">
+            <a href="{{ '/notes/' | relative_url }}">Notes</a>
+          </li>
+          <li class="{% if page.url == '/tools/' %}active{% endif %}">
+            <a href="{{ '/tools/' | relative_url }}">Tools</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Navigation -->
+      <nav class="fullscreen-nav" id="fullscreen-nav">
+        <ul>
+          <li class="{% if page.url == '/' %}active{% endif %}">
+            <a href="{{ '/' | relative_url }}">Home</a>
+          </li>
+          <li class="{% if page.url == '/links/' %}active{% endif %}">
+            <a href="{{ '/links/' | relative_url }}">Links</a>
+          </li>
+          <li class="{% if page.url contains '/blog/' %}active{% endif %}">
+            <a href="{{ '/blog/' | relative_url }}">Blog</a>
+          </li>
+          <li class="{% if page.url contains '/notes/' %}active{% endif %}">
+            <a href="{{ '/notes/' | relative_url }}">Notes</a>
+          </li>
+          <li class="{% if page.url == '/tools/' %}active{% endif %}">
+            <a href="{{ '/tools/' | relative_url }}">Tools</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">{{ content }}</main>
+
+  <footer>
+    <nametag>
+      All opinions expressed are my own and do not reflect the views of my employer or university.
+    </nametag>
+    <b>
+      <a href="https://github.com/Schizzle13/Schizzle13.github.io" target="_blank">Source Code</a>
+    </b>
+  </footer>
+</body>
+
 </html>

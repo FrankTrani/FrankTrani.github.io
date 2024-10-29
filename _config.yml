@@ -1,4 +1,3 @@
-
 title: Frank Trani's Blog
 email: frani@ftrani.com
 description: A personal blog about web development and technology.
@@ -9,8 +8,18 @@ github_username:
 
 # Build settings
 markdown: kramdown
+mathjax: true
 kramdown:
-   math_engine: mathjax
+  math_engine: mathjax
 theme: minima
 plugins:
   - jekyll-feed
+
+  
+collections:
+  posts:
+    output: true
+  notes:
+    output: true
+    permalink: /notes/:title/
+

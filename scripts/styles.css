@@ -163,9 +163,10 @@ header {
 
 .top-nav ul li a:hover,
 .top-nav ul li a.active {
-  background-color: var(--main-color);
-  color: #fff;
+  background-color: var(--main-color) !important;
+  color: #fff !important;
 }
+
 
 .hamburger {
   display: none;
@@ -1148,4 +1149,8 @@ code {
 
 #reset-btn:hover {
   background-color: #c82333;
+}
+
+mjx-container[jax="CHTML"] {
+  display: inline-block;
 }
