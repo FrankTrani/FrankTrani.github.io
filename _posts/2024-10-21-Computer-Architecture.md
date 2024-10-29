@@ -2,7 +2,7 @@
 layout: post
 title: "Introduction to Computer Architecture and Digital Logic"
 date: 2024-10-25
-categories: CS115 Computer-Architecture
+categories: Computer-Science Computer-Architecture
 ---
 
 ## Introduction to Computer Architecture and Digital Logic
@@ -89,33 +89,33 @@ Logic gates perform fundamental operations on binary inputs to produce binary ou
 
 ### Common Logic Gates
 
- **NOT Gate**: Inverts the input.
+**NOT Gate**: Inverts the input.
 
-  | Input (x) | Output (¬x) |
-  | --------- | ----------- |
-  | 0 | 1 |
-  | 1 | 0 |
-  
- **AND Gate**: Outputs 1 only if both inputs are 1.
+| Input (x) | Output (¬x) |
+| --------- | ----------- |
+| 0         | 1           |
+| 1         | 0           |
 
-  | x | y | AND (x \* y) |
-  | --- | --- | ------------ |
-  | 0 | 0 | 0 |
-  | 1 | 1 | 1 |
+**AND Gate**: Outputs 1 only if both inputs are 1.
 
- **OR Gate**: Outputs 1 if either input is 1.
+| x   | y   | AND (x \* y) |
+| --- | --- | ------------ |
+| 0   | 0   | 0            |
+| 1   | 1   | 1            |
 
-  | x | y | OR (x + y) |
-  | --- | --- | ---------- |
-  | 0 | 1 | 1 |
-  | 1 | 1 | 1 |
-  
- **XOR Gate**: Outputs 1 if inputs differ, essential for binary addition in arithmetic circuits.
+**OR Gate**: Outputs 1 if either input is 1.
 
-  | x | y | XOR (x ⊕ y) |
-  | --- | --- | ----------- |
-  | 0 | 1 | 1 |
-  | 1 | 0 | 1 |
+| x   | y   | OR (x + y) |
+| --- | --- | ---------- |
+| 0   | 1   | 1          |
+| 1   | 1   | 1          |
+
+**XOR Gate**: Outputs 1 if inputs differ, essential for binary addition in arithmetic circuits.
+
+| x   | y   | XOR (x ⊕ y) |
+| --- | --- | ----------- |
+| 0   | 1   | 1           |
+| 1   | 0   | 1           |
 
 ### De Morgan’s Laws
 
@@ -277,7 +277,7 @@ Alan Turing was a pioneer in computer science, mathematics, and cryptography.
 
 - **Education**: Turing earned his Ph.D. from Princeton University, introducing theoretical computation concepts.
 - **Key Contributions**:
-   - **Turing Machine**: A model for computation that formalized the concept of algorithms.
-   - **Breaking the Enigma Code**: His work at **Bletchley Park** during WWII helped decode German communications, impacting the war’s outcome.
+  - **Turing Machine**: A model for computation that formalized the concept of algorithms.
+  - **Breaking the Enigma Code**: His work at **Bletchley Park** during WWII helped decode German communications, impacting the war’s outcome.
 
 ---

@@ -42,6 +42,7 @@ code {
   --bg-color: #0d0f13;
   --bg-tint: #1b1e2a;
   --text-color: #ecf0f1;
+  --text-color-rev: #2c3e50;
   --text-color-secondary: #bdc3c7;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --boxes: #0b263b;
@@ -51,6 +52,7 @@ code {
   --bg-color: #bdf0f8;
   --bg-tint: #e6fbff;
   --text-color: #2c3e50;
+  --text-color-rev: #ecf0f1;
   --text-color-secondary: #34495e;
   --boxes: #92e0ff;
 }
@@ -1021,4 +1023,129 @@ code {
 .prism-theme {
   --prism-background-color: var(--bg-color);
   --prism-text-color: var(--text-color-secondary);
+}
+
+/* Styling for the Converter Page */
+.converter-section {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: var(--bg-tint);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Styling */
+.converter-section h1 {
+  color: var(--main-color);
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+
+/* Upload Section Styling */
+.upload-label {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+#upload-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+#upload-input:hover {
+  border-color: var(--main-color);
+}
+
+/* Format Selection Dropdown */
+#format-section {
+  margin: 20px 0;
+}
+
+#format-select {
+  padding: 10px;
+  font-size: 1rem;
+  color: var(--text-color-rev);
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+#format-select:hover {
+  border-color: var(--main-color);
+}
+
+/* Preview Section */
+#preview-section {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#preview-image {
+  max-width: 100%;
+  max-height: 300px;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Action Buttons */
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-group button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#convert-btn {
+  background-color: #28a745; /* Green for Convert */
+}
+
+#download-btn {
+  background-color: #0056b3; /* Blue for Download */
+  display: none; /* Hidden until Convert is pressed */
+}
+
+#reset-btn {
+  background-color: #dc3545; /* Red for Reset */
+}
+
+.button-group button:hover {
+  transform: translateY(-2px);
+}
+
+#convert-btn:hover {
+  background-color: #218838;
+}
+
+#download-btn:hover {
+  background-color: #003e80;
+}
+
+#reset-btn:hover {
+  background-color: #c82333;
 }

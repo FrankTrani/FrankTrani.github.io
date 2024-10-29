@@ -1,0 +1,40 @@
+---
+layout: default
+title: Universal Image Converter
+permalink: /convert/
+---
+
+<section class="converter-section">
+  <h1>Universal Image Converter</h1>
+
+  <!-- Upload Section -->
+  <div id="upload-section">
+    <label for="upload-input" class="upload-label">Choose an image to convert:</label>
+    <input type="file" id="upload-input" accept="image/jpeg, image/png, image/heic, image/webp, image/gif" />
+  </div>
+
+  <!-- Format Selection -->
+  <div id="format-section">
+    <label for="format-select">Convert to:</label>
+    <select id="format-select">
+      <option value="image/png">PNG</option>
+      <option value="image/jpeg">JPEG</option>
+      <option value="image/webp">WebP</option>
+    </select>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="button-group">
+    <button id="convert-btn">Convert</button>
+    <button id="download-btn" style="display: none;">Download Converted Image</button>
+    <button id="reset-btn">Reset</button>
+  </div>
+
+  <!-- Preview Section -->
+  <div id="preview-section" style="display: none;">
+    <h2>Image Preview</h2>
+    <img id="preview-image" src="" alt="Image Preview" />
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>

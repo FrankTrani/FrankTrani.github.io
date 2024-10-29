@@ -88,3 +88,123 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Select DOM elements
+const uploadInput = document.getElementById("upload-input");
+const formatSelect = document.getElementById("format-select");
+const convertButton = document.getElementById("convert-btn");
+const downloadButton = document.getElementById("download-btn");
+const resetButton = document.getElementById("reset-btn");
+const previewImage = document.getElementById("preview-image");
+const previewSection = document.getElementById("preview-section");
+
+let file = null;
+
+// Event Listeners
+uploadInput.addEventListener("change", handleFileUpload);
+convertButton.addEventListener("click", convertFile);
+downloadButton.addEventListener("click", resetAfterDownload);
+resetButton.addEventListener("click", resetConverter);
+
+function handleFileUpload(event) {
+  file = event.target.files[0];
+  if (file) displayImagePreview(file);
+}
+
+// Preview Image Display
+function displayImagePreview(file) {
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    previewImage.src = e.target.result;
+    previewSection.style.display = "block";
+    downloadButton.style.display = "none"; // Hide download button until convert is pressed
+  };
+  reader.readAsDataURL(file);
+}
+
+// Conversion Function
+function convertFile() {
+  if (!file) {
+    alert("Please upload an image file to convert.");
+    return;
+  }
+
+  const fileType = file.type;
+  if (fileType === "image/heic") {
+    convertHEIC(file);
+  } else if (fileType.startsWith("image/")) {
+    convertToSelectedFormat(file);
+  } else {
+    alert("Please select a supported image format.");
+  }
+}
+
+// Convert HEIC to the Selected Format
+function convertHEIC(file) {
+  heic2any({ blob: file, toType: "image/jpeg" })
+    .then((convertedBlob) => {
+      convertBlobToSelectedFormat(convertedBlob);
+    })
+    .catch((error) => {
+      console.error("HEIC conversion error:", error);
+      alert("Could not convert HEIC file.");
+    });
+}
+
+// Convert Other Formats
+function convertToSelectedFormat(file) {
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    convertDataUrlToFormat(e.target.result);
+  };
+  reader.readAsDataURL(file);
+}
+
+function convertDataUrlToFormat(dataUrl) {
+  const img = new Image();
+  img.src = dataUrl;
+
+  img.onload = function () {
+    const canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    const selectedFormat = formatSelect.value;
+    const convertedDataUrl = canvas.toDataURL(selectedFormat);
+
+    downloadButton.style.display = "inline-block";
+    downloadButton.onclick = () => downloadImage(convertedDataUrl, selectedFormat);
+  };
+}
+
+function convertBlobToSelectedFormat(blob) {
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    convertDataUrlToFormat(e.target.result);
+  };
+  reader.readAsDataURL(blob);
+}
+
+// Download and Reset
+function downloadImage(dataUrl, format) {
+  const link = document.createElement("a");
+  link.href = dataUrl;
+  link.download = `converted-image.${format.split("/")[1]}`;
+  link.click();
+}
+
+function resetAfterDownload() {
+  resetConverter();
+}
+
+// Reset Converter
+function resetConverter() {
+  file = null;
+  previewImage.src = "";
+  previewSection.style.display = "none";
+  downloadButton.style.display = "none";
+  uploadInput.value = "";
+}

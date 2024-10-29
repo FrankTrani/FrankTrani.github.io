@@ -60,7 +60,7 @@ Hutchins noticed that WannaCry was programmed to check a specific, nonsensical w
 The kill switch worked as follows:
 
 1. **Domain Check**: Every time WannaCry attempted to infect a machine, it first checked if the specific domain was reachable.
-2. **Activation**: Once Hutchins registered the domain, the malware found the domain “active” and terminated its spread on infected systems. 
+2. **Activation**: Once Hutchins registered the domain, the malware found the domain “active” and terminated its spread on infected systems.
 
 This discovery significantly reduced the impact of WannaCry, though variations of the malware without this kill switch surfaced later.
 
